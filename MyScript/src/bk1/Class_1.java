@@ -1,4 +1,5 @@
 package bk1;
+
 public class Class_1 {
 
 	public static void main(String[] args) {
@@ -23,7 +24,7 @@ public class Class_1 {
 		// System.out.println(a);
 		// System.out.println(c);
 		
-		
+		//default语句表示所有情况都不匹配的时候，就执行该处的内容，和if语句的else相似。
 //		System.out.println("输入月份：");
 //		@SuppressWarnings("resource")
 //		Scanner sc = new Scanner(System.in);
@@ -65,7 +66,8 @@ public class Class_1 {
 //		case 12:
 //			System.out.println("当前是冬季");
 //			break;
-//
+//		default:
+//			System.out.println("输入月份错误");
 //		}
 //		System.out.println("选择正确答案 1+1=？");
 //		System.out.println("A.1" + "     " + "B.2");
@@ -124,18 +126,64 @@ public class Class_1 {
 //				System.out.print(j+"*"+i+"="+(i*j)+"\t");
 //		}
 		/*小芳的妈妈每天给她2.5元钱，她都会存起来，但是，每当这一天是存钱的第5天或者5的倍数的话，她都会花去6元钱，请问，经过多少天，小芳才可以存到100元钱。*/
-		int money = 0;
-		int day = 1;		    
-         while(true){
-        	 money += 2.5;
-        	 if(money>=100){
-        		 System.out.println("需要存"+day+"天");
-        		 break;
-        	 }
-        	 if(day%5==0){
-        		money -= 6;
-        	 }
-        	 day++;
-         }
+//		int money = 0;
+//		int day = 1;		    
+//         while(true){
+//        	 money += 2.5;
+//        	 if(money>=100){
+//        		 System.out.println("需要存"+day+"天");
+//        		 break;
+//        	 }
+//        	 if(day%5==0){
+//        		money -= 6;
+//        	 }
+//        	 day++;
+//         }
+		//获取两个整数中的最大值
+//		int x = 123;
+//		int y = 345;
+//		int max = (x<y?x:y);// : 的作用？
+//		System.out.println(max);
+		
+		//面试题：请问下面的代码哪个有问题?
+//		short a = 1;
+//		a = a+1;		//类型不匹配:不能从int转换为short
+//		short s = 1;
+//		s += s;
+		//++,--的练习题		
+		//第一题：
+//		int a = 10;
+//		int b = 10;
+//		int c = 10;
+//		//提示  a=a++ 先赋值再运算 ; a=++a 先运算再赋值
+//		a = b++;// a=10,b=11,c=10
+//		System.out.println(a);
+//		System.out.println(b);
+//		System.out.println(c);
+//		c = --a;// a=9,b=11,c=9
+//		System.out.println("===========");
+//		System.out.println(a);
+//		System.out.println(b);
+//		System.out.println(c);
+//		b = ++a;// a=10,b=10,c=9   
+//		System.out.println("===========");
+//		System.out.println(a);
+//		System.out.println(b);
+//		System.out.println(c);
+//		a = c--;// a=10,b=10,c=8
+//		System.out.println("===========");
+//		System.out.println(a);
+//		System.out.println(b);
+//		System.out.println(c);
+		
+		int x = 4;
+		int y = (x--)+(--x)+(x*10); //把 x 后的 --，全部给到第二个x的运算，第一个x不变，第二个x之后的x 都是2
+		//4+6+60
+		//x=5,6
+		System.out.println("y:"+y);
+		
+		int a = 4;
+		int b = (a++)+(a++)+(--a)+(a*10);//         4  6    50
+		System.out.println(b);
 	}
 }
