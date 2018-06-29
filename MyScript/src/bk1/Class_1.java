@@ -176,14 +176,65 @@ public class Class_1 {
 //		System.out.println(b);
 //		System.out.println(c);
 		
-		int x = 4;
-		int y = (x--)+(--x)+(x*10); //把 x 后的 --，全部给到第二个x的运算，第一个x不变，第二个x之后的x 都是2
-		//4+6+60
-		//x=5,6
-		System.out.println("y:"+y);
+//		int x = 4;
+//		int y = (x--)+(--x)+(x*10); //把 x 后的 --，全部给到第二个x的运算，第一个x不变，第二个x之后的x 都是2
+//		//4+6+60
+//		//x=5,6
+//		System.out.println("y:"+y);
+//		
+//		int a = 4;
+//		int b = (a++)+(a++)+(--a)+(a*10);//         4  6    50
+//		System.out.println(b);
 		
-		int a = 4;
-		int b = (a++)+(a++)+(--a)+(a*10);//         4  6    50
-		System.out.println(b);
+		//获取两个整数中的最大值      （三目运算符）
+//		int x = 100;
+//		int y = 300;
+//		int z = 250;
+//		//int min = (x>y?y:x);
+//		int min = (z>y)?((z>x)?z:x):((y>x)?y:x); //套用  x>y?x:y 模式， (x>y)？ 输出boolean值，ture输出x,false 输出y。
+//		System.out.println(min);
+		
+		// |、&&、! 或、与、非        ||、&&、^  或、与、异或	逻辑运算符 
+//		int x = 3;
+//		int y = 4;
+//		
+//		//boolean b1 = ((x++ == 3) & (y++ == 4));// 4 5 true
+//		//boolean b1 = ((x++ == 3) || (y++ == 4));// 4 4 true
+//		boolean b1 = ((++x == 3) | (y++ == 4));// 4 5 true
+//		//boolean b1 = ((++x == 3) && (y++ == 4));// 4 4 false
+//		//boolean b1 = ((x-- == 3) || (y++ == 4)); // 2 4 true 
+//		System.out.println("x:"+x);
+//		System.out.println("y:"+y);
+//		System.out.println(b1);
+		
+		//位运算符			以二进制进行运算， &: 有0则0；|：有1则1；^：相同则0，不同则1； ~：01互换
+//		int a = 3;
+//		int b = 4;
+//		String c = Integer.toBinaryString(-4);
+//		System.out.println(3 & 4);
+//		System.out.println(3 | 4);
+//		System.out.println(3 ^ 4);
+//		System.out.println(~3);
+//		System.out.println(c);
+		
+		//异或，不使用第三个变量，交换ab的值  +-/*  ^
+		//
+		int a = 10;//01010
+		int b = 20;//10100
+		String c = Integer.toBinaryString(6);
+		System.out.println(c);
+		String d = Integer.toBinaryString(-24>>>2);
+		System.out.println(-24>>2);
+		a = a^b; //11110 
+		b = b^a; //01010 
+		a = a^b; //10101 
+		System.out.println(a+" "+b);
+
+		
+		//位运算符
+		//	<<:左移	左边最高位丢弃，右边补齐0
+		//>>:右移	最高位是0，左边补齐0；最高为是1，左边补齐1
+		//>>>:无符号右移 无论最高位是0还是1，左边补齐0
+		
 	}
 }
