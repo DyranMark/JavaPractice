@@ -1,7 +1,9 @@
 package bk1;
-
+import java.util.Scanner;
+import java.util.StringTokenizer;
 public class Class_1 {
 
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		// System.out.print("Hello !");
@@ -219,16 +221,16 @@ public class Class_1 {
 		
 		//异或，不使用第三个变量，交换ab的值  +-/*  ^
 		//
-		int a = 10;//01010
-		int b = 20;//10100
-		String c = Integer.toBinaryString(6);
-		System.out.println(c);
-		String d = Integer.toBinaryString(-24>>>2);
-		System.out.println(-24>>2);
-		a = a^b; //11110 
-		b = b^a; //01010 
-		a = a^b; //10101 
-		System.out.println(a+" "+b);
+//		int a = 10;//01010
+//		int b = 20;//10100
+//		String c = Integer.toBinaryString(6);
+//		System.out.println(c);
+//		String d = Integer.toBinaryString(-24>>>2);
+//		System.out.println(-24>>2);
+//		a = a^b; //11110 
+//		b = b^a; //01010 
+//		a = a^b; //10101 
+//		System.out.println(a+" "+b);
 
 		
 		//位运算符
@@ -236,5 +238,163 @@ public class Class_1 {
 		//>>:右移	最高位是0，左边补齐0；最高为是1，左边补齐1
 		//>>>:无符号右移 无论最高位是0还是1，左边补齐0
 		
+		 /*
+		键盘录入练习：
+			键盘录入两个数据，并对这两个数据求和，输出其结果
+		 */
+//		Scanner sc1 = new Scanner(System.in);
+//		int x = sc1.nextInt();
+//		Scanner sc2 = new Scanner(System.in);
+//		int y = sc2.nextInt();
+//		x +=y;
+//		System.out.println(x);
+		
+		/*
+		练习：
+			键盘录入三个数据，获取这三个数据中的最大值
+			键盘录入两个数据，比较这两个数据是否相等
+		 */
+//		Scanner sc = new Scanner(System.in);
+//		int a = sc.nextInt();
+
+//		int b = sc.nextInt();
+
+//		int c = sc.nextInt();
+		
+//		int max = (a>b)?(a>c?a:c):(b>c?b:c);
+//		int min = (a<b)?(a<c?a:c):(b<c?b:c);
+//		System.out.println("Max:"+max+"\n"+"Min:"+min);
+		
+//		int a = sc.nextInt();
+//		int b = sc.nextInt();
+//		boolean temp = (a==b);
+//		System.out.println(temp);	
+		
+		/*
+		if语句的注意事项：
+			A:比较表达式无论简单还是复杂，结果必须是boolean类型
+			B:if语句控制的语句体如果是一条语句，大括号可以省略；
+			  如果是多条语句，就不能省略。建议永远不要省略。
+			C:一般来说：有左大括号就没有分号，有分号就没有左大括号
+	*/
+//		int x =9;
+//		
+//		if(x==10){
+//			System.out.println("x=10");
+//		}
+//		if(x==10|x>5){
+//			System.out.println("x>5&x=10?");
+//		}
+		
+//		int a = 100;
+//		if(a != 100) {
+//			System.out.println("a的值是100");
+//			System.out.println("over");
+//		}
+//		System.out.println("-------------------");
+//		
+//		int b = 100;
+//		if(b != 100);  
+//		//这里其实是有语句体的，只不过是空语句体。
+//		//代码块
+//		{
+//			System.out.println("b的值是100");
+//			System.out.println("over");
+//		}
+		
+		//if else 练习
+//		int a = 10;
+//		int b = 20;
+//		
+//		if(a==b){
+//			System.out.println("yes");
+//		}else{
+//			System.out.println("no");
+//		}
+		/*
+		由于if语句的第二种格式刚才也完成了三元运算符可以完成的效果。
+		所以，我们就认为他们可以完成一样的操作。
+		但是，他们就一点区别没有吗?肯定不是。
+		
+		区别：
+			三元运算符实现的，都可以采用if语句实现。反之不成立。
+			
+			什么时候if语句实现不能用三元改进呢?
+				当if语句控制的操作是一个输出语句的时候就不能。
+				为什么呢?因为三元运算符是一个运算符，运算符操作完毕就应该有一个结果，而不是一个输出。
+		 */
+//		int x = 101;
+//		//String s = (x%2 == 0)?System.out.println("100是一个偶数"):System.out.println("100是一个奇数");//三元运算符不能输出，只能产生结果
+//		
+//		if(x%2==0){
+//			System.out.println("偶数");
+//		}else{
+//			System.out.println("奇数");
+//		}
+		
+		//需求：键盘录入一个成绩，判断并输出成绩的等级。
+		/*
+			90-100 优秀
+			80-90  好
+			70-80  良
+			60-70  及格
+			0-60   不及格
+		*/
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("成绩:");
+//		int grade = sc.nextInt();
+//		if(grade>90&&grade<100){
+//			System.out.println("优秀");
+//		}
+//		if(grade>80&&grade<90){
+//			System.out.println("良好");
+//		}
+//		if(grade>70&&grade<80){
+//			System.out.println("一般");
+//		}
+//		if(grade>60&&grade<70){
+//			System.out.println("及格");
+//		}
+//		if(grade>0&&grade<60){
+//			System.out.println("不及格");
+//		}else{
+//			System.out.println("输入错误！");
+//		}
+		
+		/*
+		获取三个数据中的最大值
+		
+		由此案例主要是为了讲解if语句是可以嵌套使用的。而且是可以任意的嵌套。
+		 */
+//		int a = 10;
+//		int b = 20;
+//		int c = 30;
+//		int max;
+//		if(a>b){
+//			if(a>c){
+//				//System.out.println(a);
+//				max = a;
+//			}else{
+//				//System.out.println(c);
+//				max = c;
+//			}
+//		}else{
+//			if(b>c){
+//				//System.out.println(b);
+//				max = b;
+//			}else{
+//				//System.out.println(c);
+//				max = c;
+//			}
+//		}
+//		System.out.println(max);
+		byte by = (byte)300;
+		System.out.println(by);
+		
+		String a = Integer.toBinaryString(130);
+		System.out.println(a);
+		
+		String b = Integer.valueOf("101100",2).toString();
+		System.out.println(b);
 	}
 }
