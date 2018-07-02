@@ -388,13 +388,28 @@ public class Class_1 {
 //			}
 //		}
 //		System.out.println(max);
-		byte by = (byte)300;
-		System.out.println(by);
+		//byte by = (byte)300;
+		//System.out.println(by);
+//		
+//		String a = Integer.toBinaryString(~6);
+//		System.out.println(a);
+//		
+//		String b = Integer.valueOf("111",2).toString();
+//		System.out.println(b);
+//		
+//		int c = 4,d=4;
+//		System.out.println(c==d?true:false);
 		
-		String a = Integer.toBinaryString(130);
-		System.out.println(a);
-		
-		String b = Integer.valueOf("101100",2).toString();
-		System.out.println(b);
+		boolean b = true;
+
+		if(b==false)
+		    System.out.println("a");
+		else if(b)
+		    System.out.println("b");
+		else if(!b)
+		    System.out.println("c");
+		else
+		    System.out.println("d");
+		                                                //b
 	}
 }
