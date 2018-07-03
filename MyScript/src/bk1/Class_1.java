@@ -400,16 +400,267 @@ public class Class_1 {
 //		int c = 4,d=4;
 //		System.out.println(c==d?true:false);
 		
-		boolean b = true;
+//		boolean b = true;
+//
+//		if(b==false)
+//		    System.out.println("a");
+//		else if(b)
+//		    System.out.println("b");
+//		else if(!b)
+//		    System.out.println("c");
+//		else
+//		    System.out.println("d");
+//		                                                //b
+		/*13:编写代码实现如下内容：if语句实现
+			考试成绩分等级。
+    			90~100    A等。
+    			80-89    B等。
+    			70-79    C等。
+    			60-69    D等。
+    			60以下    E等。
+			请根据给定成绩，输出对应的等级。*/
+//		Scanner sc = new Scanner(System.in);
+//		int grade = sc.nextInt();
+//		if(grade>100|grade<0){
+//			System.out.println("输入错误！");
+//		}else if(grade>=90){
+//			System.out.println("A");
+//		}else if(grade>=80&grade<90){
+//			System.out.println("B");
+//		}else if(grade>=70&grade<80){
+//			System.out.println("C");
+//		}else if(grade>=60&grade<70){
+//			System.out.println("D");
+//		}else{
+//			System.out.println("E");
+//		}
+		
+		//System.out.println("5+5="+5+5);
+		//System.out.println(5+5+"=5+5");
+		
+		//java_04
+		//WEEK，输出星期几
+//		Scanner sc =new Scanner(System.in);
+//		byte a = sc.nextByte();
+//		switch(a){
+//		case 1:
+//			System.out.println("Monday");
+//			break;
+//		case 2:
+//			System.out.println("Tuesday");
+//			break;
+//		case 3:
+//			System.out.println("Wednesday");
+//			break;
+//		case 4:
+//			System.out.println("Thursday");
+//			break;
+//		case 5:
+//			System.out.println("Friday");
+//			break;
+//		case 6:
+//			System.out.println("Saturday");
+//			break;
+//		case 7:
+//			System.out.println("Sunday");
+//			break;
+//		case 8:
+//			System.out.println("Funday");
+//			break;
+//		default:
+//			System.out.println("输入错误！");
+//			break;
+//		}
+		
+		/*
+		看程序写结果
+		 */
+//		int x = 2;
+//		int y = 3;
+//		switch(x){
+//			default:
+//				y++;
+//				break;
+//			case 3:
+//				y++;
+//			case 4:
+//				y++;
+//		}
+//		System.out.println("y="+y);//4
+//		System.out.println("---------------");
+//		
+//		int a = 2;
+//		int b = 3;
+//		switch(a){
+//			default:
+//				b++;
+//			case 3:
+//				b++;
+//			case 4:
+//				b++;
+//		}
+//		System.out.println("b="+b);//6
+		
+		//选择题
+//		System.out.println("下面的几个人你最爱谁?");
+//		System.out.println("68 王力宏");	
+//		System.out.println("65 林青霞");
+//		System.out.println("66 张曼玉");
+//		System.out.println("67 刘德华");
+//
+//		/* Ascii码对照
+//		  0100 0001	65	41	A
+//		  0100 0010	66	42	B
+//		  0100 0011	67	43	C
+//		  0100 0100	68	44	D
+//		*/
+//		//键盘录入选择的数据。
+//		Scanner sc = new Scanner(System.in);
+//		
+//		System.out.println("请输入你的选择：");
+//		int choiceNumber = sc.nextInt();
+//		
+//		//强制转换为字符类型
+//		char choice = (char) choiceNumber;
+//		
+//		switch(choice) {
+//			case 'A':
+//				System.out.println("恭喜你,选择正确");
+//				break;
+//			case 'B':
+//				System.out.println("不好意思，你选择有误");
+//				break;
+//			case 'C':
+//				System.out.println("不好意思，你选择有误");
+//				break;
+//			case 'D':
+//				System.out.println("不好意思，你选择有误");
+//				break;
+//			default:
+//				System.out.println("没有该选项");
+//				break;
+//		}
+		
+		//创建键盘录入对象
+//		Scanner sc = new Scanner(System.in);
+//		
+//		//录入数据
+//		System.out.println("请输入月份(1-12)：");
+//		int month = sc.nextInt();
+//		//这样写太麻烦了，我们使用一个我们不想使用的东西：case穿透
+//				switch(month) {
+//					case 1:
+//					case 2:
+//					case 12:
+//						System.out.println("冬季");
+//						break;
+//					case 3:
+//					case 4:
+//					case 5:
+//						System.out.println("春季");
+//						break;
+//					case 6:
+//					case 7:
+//					case 8:
+//						System.out.println("夏季");
+//						break;
+//					case 9:
+//					case 10:
+//					case 11:
+//						System.out.println("秋季");
+//						break;
+//					default:
+//						System.out.println("你输入的月份有误");
+//				}
+	/*
+	需求：求出1-10之间数据之和
+	*/
+//		int sum = 0;
+//		for(int x=0;x<=10;x++){
+//			sum += x;
+//		}
+//		System.out.println(sum);
+//		
+//		/*求100之间奇数或偶数的和*/
+//		int sum1=0;
+//		for(int x=0;x<=100;x+=2){
+//			sum1 +=x;
+//		}
+//		System.out.println(sum1);
+//		
+//		int sum2=0;
+//		for(int x=0;x<=100;x++){
+//			if(x%2==0){
+//				sum2 +=x;
+//			}
+//		}
+//		System.out.println(sum2);
+		
+		/*需求：求5的阶乘。*/
+//		int sum=1;
+//		for(int x=1;x<=5;x++){
+//			sum *= x;
+//		}
+//		System.out.println(sum);
+//		System.out.println(1*2*3*4*5);
+		
+		/*需求：在控制台输出所有的”水仙花数”*/
+//		int sum = 0;
+//		for(int x=100;x<=999;x++){
+//			int ge = x%10;
+//			int shi= x/10%10;
+//			int bai= x/100%10;
+//			if((ge*ge*ge)+(shi*shi*shi)+(bai*bai*bai)==x){
+//				System.out.println(x);
+//					sum ++;
+//			}
+//		}
+//		System.out.println("水仙花有"+sum);
+	/*	练习：
+		请在控制台输出满足如下条件的五位数
+		个位等于万位
+		十位等于千位
+		个位+十位+千位+万位=百位*/
+//		for(int x=10000;x<=99999;x++){
+//			int g = x%10;
+//			int s = x/10%10;
+//			int b = x/100%10;
+//			int q = x/1000%10;
+//			int w = x/10000%10;
+//			if(g==w&s==q&g+s+q+w==b){
+//				System.out.println(x);
+//			}
+//		}
+		/*
+	需求：请统计1-1000之间同时满足如下条件的数据有多少个：
+			对3整除余2
+			对5整除余3
+			对7整除余2*/	
+//		for(int x=1;x<=1000;x++){
+//			if(x%3==2&x%5==3&x%7==2){
+//				System.out.println(x);
+//			}
+//		}
+		
+		Scanner sc = new Scanner(System.in);
+		byte day = sc.nextByte();
 
-		if(b==false)
-		    System.out.println("a");
-		else if(b)
-		    System.out.println("b");
-		else if(!b)
-		    System.out.println("c");
-		else
-		    System.out.println("d");
-		                                                //b
+		if(day>7|day<1){
+		    System.out.println("输入错误！");
+		}else if(day==1){
+		    System.out.println("Monday");
+		}else if(day==2){
+		    System.out.println("Tuesday");
+		}else if(day==3){
+		    System.out.println("Wednesday");
+		}else if(day==4){
+		    System.out.println("Thursday");
+		}else if(day==5){
+		    System.out.println("Friday");
+		}else if(day==6){
+		    System.out.println("Saturday");
+		}else{
+		    System.out.println("Sunday");
+		}
 	}
 }
