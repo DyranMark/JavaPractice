@@ -642,25 +642,95 @@ public class Class_1 {
 //			}
 //		}
 		
-		Scanner sc = new Scanner(System.in);
-		byte day = sc.nextByte();
+//		Scanner sc = new Scanner(System.in);
+//		byte day = sc.nextByte();
+//
+//		if(day>7|day<1){
+//		    System.out.println("输入错误！");
+//		}else if(day==1){
+//		    System.out.println("Monday");
+//		}else if(day==2){
+//		    System.out.println("Tuesday");
+//		}else if(day==3){
+//		    System.out.println("Wednesday");
+//		}else if(day==4){
+//		    System.out.println("Thursday");
+//		}else if(day==5){
+//		    System.out.println("Friday");
+//		}else if(day==6){
+//		    System.out.println("Saturday");
+//		}else{
+//		    System.out.println("Sunday");
+//		}
+		
+		/*while 循环联系
+		输出三角形、倒三角、菱形、九九乘法表
+		 */
+//		for(int i=0;i<8;i++){			//控制行数
+//			System.out.println();		
+//			for(int j=7;j>i;j--)		//控制左侧空格
+//				System.out.print("&");	
+//			for(int j=0;j<=i;j++)		//因为空格，所以输出靠右的直角三角形
+//				System.out.print("*");
+//			for(int j=0;j<i;j++)		//输出右边
+//				System.out.print("*");
+//		}
+		//用while 输出等腰三角形、菱形，done!
 
-		if(day>7|day<1){
-		    System.out.println("输入错误！");
-		}else if(day==1){
-		    System.out.println("Monday");
-		}else if(day==2){
-		    System.out.println("Tuesday");
-		}else if(day==3){
-		    System.out.println("Wednesday");
-		}else if(day==4){
-		    System.out.println("Thursday");
-		}else if(day==5){
-		    System.out.println("Friday");
-		}else if(day==6){
-		    System.out.println("Saturday");
-		}else{
-		    System.out.println("Sunday");
+//		int h=0;
+//		while(h<6){			
+//			h++;
+//			System.out.println();
+//			
+//			int e=7;
+//			while(e>h){
+//				e--;	
+//			System.out.print(" ");				
+//			}
+//			int f=1;
+//			while(f<h){
+//				f++;
+//			System.out.print("*");
+//			}
+//			int g=0;
+//			while(g<h){
+//				g++;
+//			System.out.print("*");
+//			}
+//		}	
+//		
+//		int a=0;
+//		while(a<6){			
+//			a++;
+//			System.out.println();
+//						
+//			int b=0;
+//			while(b<a){
+//				b++;	
+//			System.out.print(" ");				
+//			}
+//			int c=6;
+//			while(c>a){
+//				c--;
+//			System.out.print("*");
+//			}
+//			int d=7;
+//			while(d>a){
+//				d--;
+//			System.out.print("*");
+//			}
+//		}
+		//While 输出 99乘法表，Done
+		int x=0;
+		while(x<9){
+			x++;
+			System.out.println();
+			
+			int y=0;
+			while(y<x){
+				y++;
+				System.out.print(x+"*"+y+"="+(x*y)+"\t");
+			}
 		}
 	}
 }
