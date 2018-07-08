@@ -1,5 +1,6 @@
 package bk1;
 
+import java.security.Timestamp;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
@@ -788,62 +789,174 @@ public class Class_1 {
 		// }
 		// }
 
-		 int x = 10, y = 20,z = 22;
-		 //两个数求和
-		 int result = sum(x, y);
-		 System.out.println(result);
-		 //三个数求和，重载：A:参数个数不同 B:参数类型不同
-		 System.out.println(sum(x,y,z));
-		 //取最大值
-		 System.out.println(max(x,y));
+		// Java_05,方法
+		// Scanner sc =new Scanner(System.in);
+		// System.out.println("请输入乘法表行数：");
+		// int n = sc.nextInt();
+		//
+		// int x = 10, y = 20,z = 22;
+		// byte a = 3,b=4;
+		// long c = 656461616,d = 569466322;
+		// String e = "我",f = "我";
+		//
+		// //两个数求和 //赋值调用
+		// int result = Sum(x, y);
+		// System.out.println(result);
+		// //三个数求和，重载：A:参数个数不同 B:参数类型不同 输出调用
+		// System.out.println(Sum(x,y,z));
+		// //两个数取最大值
+		// System.out.println(Max(x,y));
+		// //三个数取最大值
+		// System.out.println(Max(x,y,z));
+		// //乘法表
+		// //System.out.println(TimesTable(n));
+		// TimesTable(n);
+		// //比较变量是否相等
+		// System.out.println(Compare(x,y));
+		// System.out.println(Compare(a, b));
+		// System.out.println(Compare(c, d));
+		// System.out.println(Compare(e, f));
+		//
+		// printer(5, 10);
+		// System.out.println("======================");
 
-		printer(5, 10);
-		System.out.println("======================");
+		// Java_05,数组
+		/*
+		 * 定义一个数组，输出该数组的名称和数组元素值。 给数组元素赋值，再次输出该数组的名称和数组元素值。
+		 */
 
+		// int [] arr;
+		// arr = new int[3];
+		// arr[0]=100;
+		// arr[1]=200;
+		// arr[2]=300;
+		// System.out.println(arr);
+		// System.out.println(arr[0]);
+		// System.out.println(arr[1]);
+		// System.out.println(arr[2]);
+
+		/*
+		 * 定义两个数组，分别输出两个数组各自的数组名及元素值。 然后给每个数组的元素重新赋值，再次分别输出两个数组各自的数组名及元素值。
+		 */
+		// int [] arr1 = new int[1];
+		// int [] arr2 = new int[1];
+		// System.out.print(arr1);
+		// System.out.println(" :"+arr1[0]);
+		// System.out.print(arr2);
+		// System.out.println(" :"+arr2[0]);
+		//
+		// arr1[0] = 22;
+		// arr2[0] = 584;
+		// System.out.print(arr1);
+		// System.out.println(" :"+arr1[0]);
+		// System.out.print(arr2);
+		// System.out.println(" :"+arr2[0]);
+
+		/*
+		 * 定义第一个数组,定义完毕后，给数组元素赋值。赋值完毕后，在输出数组名称和元素。
+		 * 定义第二个数组,定义完毕后，给数组元素赋值。赋值完毕后，在输出数组名称和元素。
+		 * 定义第三个数组,把第一个数组的地址值赋值给它。(注意类型一致)，通过第三个数组的名称去把元素重复赋值。
+		 * 最后，再次输出第一个数组数组名称和元素。
+		 */
+
+		// int [] arr1,arr2,arr3;
+		// arr1 = new int[3]; arr1[0] = 11; arr1[1] = 12; arr1[2] = 13;
+		// System.out.println(arr1);
+		// System.out.println(arr1[0]);
+		// System.out.println(arr1[1]);
+		// System.out.println(arr1[2]);
+		//
+		// arr2 = new int[3]; arr2[0] = 14; arr2[1] = 15; arr2[2] = 16;
+		// System.out.println(arr2);
+		// System.out.println(arr2[0]);
+		// System.out.println(arr2[1]);
+		// System.out.println(arr2[2]);
+		//
+		// arr3 = new int[3]; arr3[0] = arr1[0]; arr3[1] = arr1[1]; arr3[2] =
+		// arr1[2];
+		// System.out.println(arr3);
+		// System.out.println(arr3[0]);
+		// System.out.println(arr3[1]);
+		// System.out.println(arr3[2]);
+		//
+		// System.out.println("==============================================");
+		// System.out.println(arr1);
+		// System.out.println(arr1[0]);
+		// System.out.println(arr1[1]);
+		// System.out.println(arr1[2]);
+
+		/*
+		 * 数组的静态初始化： 格式：数据类型[] 数组名 = new 数据类型[]{元素1,元素2,…}; 简化格式： 数据类型[] 数组名 =
+		 * {元素1,元素2,…};
+		 * 
+		 * 举例： int[] arr = new int[]{1,2,3};
+		 * 
+		 * 简化后：
+		 * 
+		 * int[] arr = {1,2,3};
+		 * 
+		 * 注意事项： 不要同时动态和静态进行。 如下格式： int[] arr = new int[3]{1,2,3}; //错误
+		 */
+
+//		int arr[] = {1,2,3,5};
+//		System.out.println(arr);
+//		for(int x=0;x<arr.length;x++){
+//			System.out.println(arr[x]);
+//		}
+		
+		/*
+		数组操作的两个常见小问题：
+			ArrayIndexOutOfBoundsException:数组索引越界异常
+				原因：你访问了不存在的索引。
+			
+			NullPointerException:空指针异常
+				原因：数组已经不在指向堆内存了。而你还用数组名去访问元素。
+				
+			作用：请自己把所有的场景Exception结尾的问题总结一下。以后遇到就记录下来。
+				  现象，原因，解决方案。
+	*/
+
+//		int [] arr = new int[3];
+//		//System.out.println(arr[3]);//ArrayIndexOutOfBoundsException:数组索引越界异常,原因：你访问了不存在的索引。
+//		
+//		int [] arr1 = null;
+//		System.out.println(arr1[0]);//NullPointerException:空指针异常
+		
+		
+		//遍历数组方法测试
+		int [] arr = {1,2,2,4,5,6,6,7,8,2,234,234,1,342,45,356};
+		PrintArray(arr);
+		//数组最大值
+		ArryMax(arr);
+		//数组最小值
+		ArryMin(arr);
+		//逆序
+		ArryReverse(arr);
 	}
 
 	/*
-    方法：完成特定功能的代码块。
-    
-    注意：在很多语言里面有函数的定义，而在Java中函数被称为方法。
-
-    方法格式：
-        修饰符 返回值类型 方法名(参数类型 参数名1,参数类型 参数名2...) {
-            方法体语句;
-            return 返回值;
-        }
-    详细解释：
-        修饰符：目前就用 public static。后面我们再详细的讲解其他的修饰符。
-        返回值类型：就是功能结果的数据类型。
-        方法名：符合命名规则即可。方便我们的调用。
-        参数：
-            实际参数：就是实际参与运算的。
-            形式参数；就是方法定义上的，用于接收实际参数的。
-        参数类型：就是参数的数据类型
-        参数名：就是变量名
-        方法体语句：就是完成功能的代码。
-        return：结束方法的。
-        返回值：就是功能的结果，由return带给调用者。
-        
-    要想写好一个方法，就必须明确两个东西：
-        A:返回值类型
-            结果的数据类型
-        B:参数列表
-            你要传递几个参数，以及每个参数的数据类型
-            
-    需求：求两个数据之和的案例
-    
-    方法的执行特点：
-        不调用，不执行。
-        
-    如何调用呢?(有明确返回值的调用)
-        A:单独调用,一般来说没有意义，所以不推荐。
-        B:输出调用,但是不够好。因为我们可能需要针对结果进行进一步的操作。
-        C:赋值调用,推荐方案。
-        
-*/
-	//这里有明确的返回值， int 所以定义该方法为 int类型
-	public static int sum(int a, int b) {
+	 * 方法：完成特定功能的代码块。
+	 * 
+	 * 注意：在很多语言里面有函数的定义，而在Java中函数被称为方法。
+	 * 
+	 * 方法格式： 修饰符 返回值类型 方法名(参数类型 参数名1,参数类型 参数名2...) { 方法体语句; return 返回值; } 详细解释：
+	 * 修饰符：目前就用 public static。后面我们再详细的讲解其他的修饰符。 返回值类型：就是功能结果的数据类型。
+	 * 方法名：符合命名规则即可。方便我们的调用。 参数： 实际参数：就是实际参与运算的。 形式参数；就是方法定义上的，用于接收实际参数的。
+	 * 参数类型：就是参数的数据类型 参数名：就是变量名 方法体语句：就是完成功能的代码。 return：结束方法的。
+	 * 返回值：就是功能的结果，由return带给调用者。
+	 * 
+	 * 要想写好一个方法，就必须明确两个东西： A:返回值类型 结果的数据类型 B:参数列表 你要传递几个参数，以及每个参数的数据类型
+	 * 
+	 * 需求：求两个数据之和的案例
+	 * 
+	 * 方法的执行特点： 不调用，不执行。
+	 * 
+	 * 如何调用呢?(有明确返回值的调用) A:单独调用,一般来说没有意义，所以不推荐。
+	 * B:输出调用,但是不够好。因为我们可能需要针对结果进行进一步的操作。 C:赋值调用,推荐方案。
+	 * 
+	 */
+	// 这里有明确的返回值， int 所以定义该方法为 int类型
+	public static int Sum(int a, int b) {
 		return a + b;
 	}
 
@@ -868,20 +981,124 @@ public class Class_1 {
 			System.out.println();
 		}
 	}
-/*	
-	方法重载：
-	在同一个类中，方法名相同，参数列表不同。与返回值类型无关。/	
-	参数列表不同：
-		A:参数个数不同
-		B:参数类型不同
- 
- */
-	public static int sum(int a,int b,int c){
-		return a+b+c;
+
+	/*
+	 * 方法重载： 在同一个类中，方法名相同，参数列表不同。与返回值类型无关。/ 参数列表不同： A:参数个数不同 B:参数类型不同
+	 * 
+	 */
+	public static int Sum(int a, int b, int c) {
+		return a + b + c;
+	}
+
+	/* 键盘录入两个数，返回两个数中较大值 */
+	public static int Max(int a, int b) {
+		return (a > b ? a : b);
+	}
+
+	/* 键盘录入三个数，求最大值 */
+	public static int Max(int a, int b, int c) {
+		// return(a>b?(a>c?a:c):(b>c?b:c));
+		int temp = a > b ? a : b;
+		int max = temp > c ? temp : c;
+		return max;
+	}
+
+	/* 键盘录入一个数据n(1<=n<=9)，输出对应的nn乘法表 */
+	public static void TimesTable(int n) {
+		for (int x = 0; x <= n; x++) {
+			System.out.println();
+			for (int y = 1; y <= x; y++) {
+				System.out.print(x + "*" + y + "=" + (x * y) + "\t");
+			}
+		}
+		System.out.println();
+	}
+
+	/*
+	 * 比较两个数据是否相等。参数类型分别为 两个byte类型，两个short类型，两个int类型，两个long类型， 并在main方法中进行测试
+	 */
+	public static boolean Compare(int a, int b) {
+		System.out.print("int" + "\t");
+		return (a == b);
+	}
+
+	public static boolean Compare(byte a, byte b) {
+		System.out.print("byte" + "\t");
+		return (a == b);
+	}
+
+	public static boolean Compare(long a, long b) {
+		System.out.print("long" + "\t");
+		return a == b;
+	}
+
+	public static boolean Compare(String a, String b) {
+		System.out.print("String" + "\t");
+		return a == b;
 	}
 	
-	/*键盘录入两个数，返回两个数中较大值*/
-	public static int max(int a,int b){
-			return(a>b?a:b);		 
+	//数组遍历方法
+	public static void PrintArray(int [] arr){
+				System.out.print("[");
+		for (int i = 0; i < arr.length; i++) {
+			if(i==arr.length-1){
+				System.out.println(arr[i]+"]");
+			}else{
+				System.out.print(arr[i]+",");
+			}
+		}
+	}
+	
+/*
+	数组获取最值(获取数组中的最大值最小值)
+	
+	分析：
+		A:定义一个数组，并对数组的元素进行静态初始化。
+		B:从数组中任意的找一个元素作为参照物(一般取第一个),默认它就是最大值。
+		C:然后遍历其他的元素，依次获取和参照物进行比较，如果大就留下来，如果小，就离开。
+		D:最后参照物里面保存的就是最大值。
+*/
+	public static void ArryMax(int [] arr){
+		int max = arr[0];
+		for (int i = 0; i < arr.length; i++) {
+			if(arr[i]>max){
+				max = arr[i];
+			}
+		}
+		System.out.println("Max:"+max);
+	}
+	public static void ArryMin(int [] arr){
+		int min = arr[0];
+		for (int i = 0; i < arr.length; i++) {
+			if(arr[i]<min){
+				min = arr[i];
+			}
+		}
+		System.out.println("Min:"+min);
+	}
+	
+	/*
+	数组元素逆序 (就是把元素对调)
+	
+	分析：
+		A:定义一个数组，并进行静态初始化。
+		B:思路
+			把0索引和arr.length-1的数据交换
+			把1索引和arr.length-2的数据交换
+			...
+			只要做到arr.length/2的时候即可。
+*/
+	public static void ArryReverse(int [] arr){
+		int last = arr.length-1;
+		for (int i = 0; i < arr.length/2; i++) {
+			
+				int temp = arr[i];
+				arr[i] = arr[last-i];
+				arr[last-i] = temp;
+			
+		}
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i]+" ");
+		}
 	}
 }
