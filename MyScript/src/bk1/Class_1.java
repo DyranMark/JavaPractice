@@ -237,7 +237,7 @@ public class Class_1 {
 		// String d = Integer.toBinaryString(-24>>>2);
 		// System.out.println(-24>>2);
 		// a = a^b; //11110
-		// b = b^a; //01010
+		// b = a^b; //01010
 		// a = a^b; //10101
 		// System.out.println(a+" "+b);
 
@@ -898,41 +898,163 @@ public class Class_1 {
 		 * 注意事项： 不要同时动态和静态进行。 如下格式： int[] arr = new int[3]{1,2,3}; //错误
 		 */
 
-//		int arr[] = {1,2,3,5};
+		// int arr[] = {1,2,3,5};
+		// System.out.println(arr);
+		// for(int x=0;x<arr.length;x++){
+		// System.out.println(arr[x]);
+		// }
+
+		/*
+		 * 数组操作的两个常见小问题： ArrayIndexOutOfBoundsException:数组索引越界异常 原因：你访问了不存在的索引。
+		 * 
+		 * NullPointerException:空指针异常 原因：数组已经不在指向堆内存了。而你还用数组名去访问元素。
+		 * 
+		 * 作用：请自己把所有的场景Exception结尾的问题总结一下。以后遇到就记录下来。 现象，原因，解决方案。
+		 */
+
+		// int [] arr = new int[3];
+		// //System.out.println(arr[3]);//ArrayIndexOutOfBoundsException:数组索引越界异常,原因：你访问了不存在的索引。
+		//
+		// int [] arr1 = null;
+		// System.out.println(arr1[0]);//NullPointerException:空指针异常
+
+		// 遍历数组方法测试
+//		int[] arr = { 1, 2, 3, 4, 5, 6, 88, 7, 99, 21, 234, 235, 1, 342, 45, 356 };
+//		String[] Sarr = { "甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "任", "癸" };
+		// PrintArray(arr);
+		// //数组最大值
+		// ArryMax(arr);
+		// //数组最小值
+		// ArryMin(arr);
+		// //逆序
+		// ArryReverse(arr);
+		// ArryReverse(Sarr);
+		// //查询星期几
+		// ArryChek(6);
+
+		// 查询相同数据下标
+		// int a = ArryEqual(234,arr);
+		// int b = ArryEqual(arr,45);
+		// System.out.println(b);
+		// System.out.println(arr[b]);
+
+		/*java_06
+		 * 二维数组：就是元素为一维数组的一个数组。
+		 * 
+		 * 格式1： 数据类型[][] 数组名 = new 数据类型[m][n];
+		 * 
+		 * m:表示这个二维数组有多少个一维数组。 n:表示每一个一维数组的元素有多少个。
+		 * 
+		 * 注意： A:以下格式也可以表示二维数组 a:数据类型 数组名[][] = new 数据类型[m][n]; b:数据类型[] 数组名[] =
+		 * new 数据类型[m][n]; B:注意下面定义的区别 int x; int y; int x,y;
+		 * 
+		 * int[] x; int[] y[];
+		 * 
+		 * int[] x,y[];
+		 */
+//		int [][] arr = new int [2][2];
 //		System.out.println(arr);
-//		for(int x=0;x<arr.length;x++){
-//			System.out.println(arr[x]);
+//		System.out.println(arr[0]);
+//		System.out.println(arr[1]);
+//		System.out.println(arr[0][0]);
+		
+		//二维数组，简化格式
+//		int [][] arr1 = {{1,2,3},{4,5,6},{7,8,9},{10,11,12},{56,85,46,100}};
+		
+		//二维数组遍历
+//		for (int i = 0; i < arr1[0].length; i++) {
+//			System.out.print(arr1[0][i]+" ");
+//		}
+		//改进,可写成方法
+//		for (int i = 0; i < arr1.length; i++) {
+//			for (int j = 0; j < arr1[i].length; j++) {
+//				System.out.print(arr1[i][j]+" ");
+//			}
 //		}
 		
+		//二维数组求和方法
+//		DyadicArrySum(arr1);
+		
 		/*
-		数组操作的两个常见小问题：
-			ArrayIndexOutOfBoundsException:数组索引越界异常
-				原因：你访问了不存在的索引。
-			
-			NullPointerException:空指针异常
-				原因：数组已经不在指向堆内存了。而你还用数组名去访问元素。
-				
-			作用：请自己把所有的场景Exception结尾的问题总结一下。以后遇到就记录下来。
-				  现象，原因，解决方案。
-	*/
 
-//		int [] arr = new int[3];
-//		//System.out.println(arr[3]);//ArrayIndexOutOfBoundsException:数组索引越界异常,原因：你访问了不存在的索引。
-//		
-//		int [] arr1 = null;
-//		System.out.println(arr1[0]);//NullPointerException:空指针异常
+		需求：打印杨辉三角形(行数可以键盘录入)
+		
+		1
+		1 1	
+		1 2 1
+		1 3 3 1
+		1 4 6 4 1 
+		1 5 10 10 5 1
+
+		分析：看这种图像的规律
+			A:任何一行的第一列和最后一列都是1
+			B:从第三行开始，每一个数据是它上一行的前一列和它上一行的本列之和。
+		
+		步骤：
+			A:首先定义一个二维数组。行数如果是n，我们把列数也先定义为n。
+			  这个n的数据来自于键盘录入。
+			B:给这个二维数组任何一行的第一列和最后一列赋值为1
+			C:按照规律给其他元素赋值
+				从第三行开始，每一个数据是它上一行的前一列和它上一行的本列之和。
+			D:遍历这个二维数组。
+	*/
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("输入行：");
+//		int x = sc.nextInt();
+//		int arr[][] = new int[x][x];
+//		for ( int i = 0; i < arr.length; i++) {
+//			arr[i][0] = 1;
+//			arr[i][i] = 1;
+//		}
+//		for (int i = 2; i < arr.length; i++) {
+//			for (int j = 1; j <= i-1; j++) {
+//				arr[i][j] = arr[i-1][j-1] + arr[i-1][j];
+//			}
+//		}
+//		for (int i = 0; i < arr.length; i++) {
+//			for (int j = x; j > 0; j--) {
+//				System.out.println();
+//				for (int j2 = j; j2 > 0; j2--) {
+//					System.out.print(" ");
+//				}
+//			}
+//			
+//			for (int j = 0; j <= i; j++) {
+//				System.out.print(arr[i][j]+" ");
+//			}
+//			System.out.println();
+//		}
 		
 		
-		//遍历数组方法测试
-		int [] arr = {1,2,2,4,5,6,6,7,8,2,234,234,1,342,45,356};
-		PrintArray(arr);
-		//数组最大值
-		ArryMax(arr);
-		//数组最小值
-		ArryMin(arr);
-		//逆序
-		ArryReverse(arr);
-	}
+		 //定义二维数组的长度
+        int length = 10;
+        //声明二维数组
+        int[][] arr = new int[length][];
+        //遍历二维数组
+        for(int i = 0; i < arr.length; i++){
+            //打印空格
+            for(int m = 0; m < arr.length - 1 - i; m++){
+                System.out.print("  ");
+            }
+            //给每个二维数据的元素赋值一维数组
+            arr[i] = new int[i+1];
+            //遍历一维数组
+            for(int j = 0; j < arr[i].length; j++){
+                //第一个元素和最后一个元素的值都是1
+                if( j == 0 || j == arr[i].length -1 ){
+                    arr[i][j] = 1;
+                }else{
+                    //当前一维数组的索引n元素的值，等于前一个数组索引n-1，加上索引n的值
+                    arr[i][j] = arr[i -1][j - 1] + arr[i - 1][j];
+                }
+                //格式化输出元素值
+                System.out.printf("%4d",arr[i][j]);
+            }
+            //换行
+            System.out.println();  
+        }
+    }
+	
 
 	/*
 	 * 方法：完成特定功能的代码块。
@@ -1036,69 +1158,136 @@ public class Class_1 {
 		System.out.print("String" + "\t");
 		return a == b;
 	}
-	
-	//数组遍历方法
-	public static void PrintArray(int [] arr){
-				System.out.print("[");
+
+	// 数组遍历方法
+	public static void PrintArray(int[] arr) {
+		System.out.print("[");
 		for (int i = 0; i < arr.length; i++) {
-			if(i==arr.length-1){
-				System.out.println(arr[i]+"]");
-			}else{
-				System.out.print(arr[i]+",");
+			if (i == arr.length - 1) {
+				System.out.println(arr[i] + "]");
+			} else {
+				System.out.print(arr[i] + ",");
 			}
 		}
 	}
-	
-/*
-	数组获取最值(获取数组中的最大值最小值)
-	
-	分析：
-		A:定义一个数组，并对数组的元素进行静态初始化。
-		B:从数组中任意的找一个元素作为参照物(一般取第一个),默认它就是最大值。
-		C:然后遍历其他的元素，依次获取和参照物进行比较，如果大就留下来，如果小，就离开。
-		D:最后参照物里面保存的就是最大值。
-*/
-	public static void ArryMax(int [] arr){
+
+	/*
+	 * 数组获取最值(获取数组中的最大值最小值)
+	 * 
+	 * 分析： A:定义一个数组，并对数组的元素进行静态初始化。 B:从数组中任意的找一个元素作为参照物(一般取第一个),默认它就是最大值。
+	 * C:然后遍历其他的元素，依次获取和参照物进行比较，如果大就留下来，如果小，就离开。 D:最后参照物里面保存的就是最大值。
+	 */
+	public static void ArryMax(int[] arr) {
 		int max = arr[0];
 		for (int i = 0; i < arr.length; i++) {
-			if(arr[i]>max){
+			if (arr[i] > max) {
 				max = arr[i];
 			}
 		}
-		System.out.println("Max:"+max);
+		System.out.println("Max:" + max);
 	}
-	public static void ArryMin(int [] arr){
+
+	public static void ArryMin(int[] arr) {
 		int min = arr[0];
 		for (int i = 0; i < arr.length; i++) {
-			if(arr[i]<min){
+			if (arr[i] < min) {
 				min = arr[i];
 			}
 		}
-		System.out.println("Min:"+min);
+		System.out.println("Min:" + min);
+	}
+
+	/*
+	 * 数组元素逆序 (就是把元素对调)
+	 * 
+	 * 分析： A:定义一个数组，并进行静态初始化。 B:思路 把0索引和arr.length-1的数据交换 把1索引和arr.length-2的数据交换
+	 * ... 只要做到arr.length/2的时候即可。
+	 */
+	public static void ArryReverse(int[] arr) {
+		int last = arr.length - 1;
+		for (int i = 0; i < arr.length / 2; i++) {
+			arr[i] = arr[i] ^ arr[last - i]; // a = a^b
+			arr[last - i] = arr[i] ^ arr[last - i]; // b = a^b
+			arr[i] = arr[i] ^ arr[last - i]; // a = a^b
+		}
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
+		System.out.println();
+	}
+
+	public static void ArryReverse(String[] arr) {
+		for (int start = 0, end = arr.length - 1; start <= end; start++, end--) {
+			String temp = arr[start];
+			arr[start] = arr[end];
+			arr[end] = temp;
+		}
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
+		System.out.println();
+	}
+
+	/*
+	 * 数组查表法(根据键盘录入索引,查找对应星期) 意思是：String[] strArray = {"星期一","星期二",...};
+	 */
+	public static void ArryChek(int day) {
+		String[] arr = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+		System.out.println("Today is " + arr[day - 1]);
+	}
+
+	/*
+	 * 需求：数组元素查找(查找指定元素第一次在数组中出现的索引)
+	 * 
+	 * 分析： A:定义一个数组，并静态初始化。 B:写一个功能实现 遍历数组，依次获取数组中的每一个元素，和已知的数据进行比较
+	 * 如果相等，就返回当前的索引值。
+	 */
+	public static int ArryEqual(int Equal, int[] arr) {
+		for (int i = 0; i < arr.length; i++) {
+			if (Equal == arr[i]) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	public static int ArryEqual(int[] arr, int Equal) {
+		int index = -1;
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] == Equal) {
+				index = i;
+				break;
+			}
+		}
+		return index;
 	}
 	
 	/*
-	数组元素逆序 (就是把元素对调)
+	公司年销售额求和
+	某公司按照季度和月份统计的数据如下：单位(万元)
+	第一季度：22,66,44
+	第二季度：77,33,88
+	第三季度：25,45,65
+	第四季度：11,66,99
 	
 	分析：
-		A:定义一个数组，并进行静态初始化。
-		B:思路
-			把0索引和arr.length-1的数据交换
-			把1索引和arr.length-2的数据交换
-			...
-			只要做到arr.length/2的时候即可。
+		A:把题目的数据用二维数组来表示
+			int[][] arr = {{22,66,44},{77,33,88},{25,45,65},{11,66,99}};
+		B:如何求和呢?
+			求和其实就是获取到每一个元素，然后累加即可。
+		C:定义一个求和变量sum，初始化值是0。
+		D:通过遍历就可以得到每一个二维数组的元素。
+		E:把元素累加即可。
+		F:最后输出sum，就是结果。
 */
-	public static void ArryReverse(int [] arr){
-		int last = arr.length-1;
-		for (int i = 0; i < arr.length/2; i++) {
-			
-				int temp = arr[i];
-				arr[i] = arr[last-i];
-				arr[last-i] = temp;
-			
-		}
+	//二维数组求和方法
+	public static void DyadicArrySum(int [][] arr){
+		int sum = 0;
 		for (int i = 0; i < arr.length; i++) {
-			System.out.print(arr[i]+" ");
+			for (int j = 0; j < arr[i].length; j++) {
+				sum += arr[i][j];
+			}
 		}
+		System.out.println("总计："+sum);
 	}
 }
