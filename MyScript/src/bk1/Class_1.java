@@ -998,61 +998,107 @@ public class Class_1 {
 				从第三行开始，每一个数据是它上一行的前一列和它上一行的本列之和。
 			D:遍历这个二维数组。
 	*/
+		
+		//等腰杨辉三角
 //		Scanner sc = new Scanner(System.in);
-//		System.out.println("输入行：");
-//		int x = sc.nextInt();
-//		int arr[][] = new int[x][x];
-//		for ( int i = 0; i < arr.length; i++) {
-//			arr[i][0] = 1;
-//			arr[i][i] = 1;
-//		}
-//		for (int i = 2; i < arr.length; i++) {
-//			for (int j = 1; j <= i-1; j++) {
-//				arr[i][j] = arr[i-1][j-1] + arr[i-1][j];
-//			}
-//		}
+//		System.out.println("行数：");
+//		int n = sc.nextInt();
+//		int [][] arr = new int[n][];
 //		for (int i = 0; i < arr.length; i++) {
-//			for (int j = x; j > 0; j--) {
-//				System.out.println();
-//				for (int j2 = j; j2 > 0; j2--) {
-//					System.out.print(" ");
-//				}
-//			}
+//			//给每一行数组定义长度，即定义一维数组的长度，i=0,所以 i+1，如果没有这一步，将报超出范围错误
+//			arr[i] = new int[i+1];
 //			
-//			for (int j = 0; j <= i; j++) {
-//				System.out.print(arr[i][j]+" ");
+//			for (int j = 1; j < arr.length-i; j++) {
+//				System.out.printf("  ");
 //			}
+//			//遍历数组，给储存空间赋值
+//			for (int j = 0; j < arr[i].length; j++) {
+//				if(j==0||j==arr[i].length-1){
+//					arr[i][j] = 1;
+//				}else{
+//					arr[i][j] = arr[i-1][j-1]+arr[i-1][j];
+//				}
+//				System.out.printf("%4d",arr[i][j]);	
+//			}	
 //			System.out.println();
 //		}
 		
+
 		
-		 //定义二维数组的长度
-        int length = 10;
-        //声明二维数组
-        int[][] arr = new int[length][];
-        //遍历二维数组
-        for(int i = 0; i < arr.length; i++){
-            //打印空格
-            for(int m = 0; m < arr.length - 1 - i; m++){
-                System.out.print("  ");
-            }
-            //给每个二维数据的元素赋值一维数组
-            arr[i] = new int[i+1];
-            //遍历一维数组
-            for(int j = 0; j < arr[i].length; j++){
-                //第一个元素和最后一个元素的值都是1
-                if( j == 0 || j == arr[i].length -1 ){
-                    arr[i][j] = 1;
-                }else{
-                    //当前一维数组的索引n元素的值，等于前一个数组索引n-1，加上索引n的值
-                    arr[i][j] = arr[i -1][j - 1] + arr[i - 1][j];
-                }
-                //格式化输出元素值
-                System.out.printf("%4d",arr[i][j]);
-            }
-            //换行
-            System.out.println();  
-        }
+		
+		
+//		 //定义二维数组的长度
+//        int length = 10;
+//        //声明二维数组
+//        int[][] arr = new int[length][];
+//        //遍历二维数组
+//        for(int i = 0; i < arr.length; i++){
+//            //给每个二维数据的元素赋值一维数组
+//            arr[i] = new int[i+1];
+//            //换行
+//            System.out.println();  
+//            //打印空格
+//            for(int m = 0; m < arr.length - 1 - i; m++){
+//                System.out.print("  ");
+//            }
+//        
+//            //遍历一维数组
+//            for(int j = 0; j < arr[i].length; j++){
+//                //第一个元素和最后一个元素的值都是1
+//                if( j == 0 || j == arr[i].length -1 ){
+//                    arr[i][j] = 1;
+//                }else{
+//                    //当前一维数组的索引n元素的值，等于前一个数组索引n-1，加上索引n的值
+//                    arr[i][j] = arr[i -1][j - 1] + arr[i - 1][j];
+//                }
+//                //格式化输出元素值
+//                System.out.printf("%4d",arr[i][j]);
+//            }
+//        }
+		
+		
+		
+		/*
+		某个公司采用公用电话传递数据信息，数据是小于8位的整数，为了确保安全，
+		在传递过程中需要加密，加密规则如下：
+			首先将数据倒序，然后将每位数字都加上5，再用和除以10的余数代替该数字，
+			最后将第一位和最后一位数字交换。 请任意给定一个小于8位的整数，
+			然后，把加密后的结果在控制台打印出来。 
+			*/
+		Scanner sc = new Scanner(System.in);
+		System.out.println("请输入八位整数：");
+		int receive = sc.nextInt();
+		int [] arr = new int[8];
+		int index = 0;
+		while(receive>0&receive<=8){
+			arr[index] = receive%10;//从个位开始录入数据，完成倒序和录入数组
+			index++;
+			receive /= 10;//每次循环进一位，个、十、百、千、万、、、、
+			
+		}
+		System.out.println("------------------录入数据");
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i]);
+		}
+		//每位数字都加上5
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] += 5;
+			arr[i] %= 10;
+		}
+		//首尾交换
+		int temp = arr[0];
+		arr[0] = arr[index-1]; //index-1,从0开始自增，到7时遍历完成，但仍会再执行一次自增，所以 -1，直接写arr[7]报超出错误
+		arr[index-1] = temp;
+		
+		System.out.println();
+		System.out.println("------------------加密成功");
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i]);
+		}
+		
+		//破解
+		Crack(arr);
+		
     }
 	
 
@@ -1289,5 +1335,55 @@ public class Class_1 {
 			}
 		}
 		System.out.println("总计："+sum);
+	}
+	
+	//破解加密（戏精附体 (￣_￣|||)）
+	public static void Crack(int [] arr){
+		int index = 0;
+		for (int i = 0; i < 10; i++) {
+			System.out.println("");
+		}
+		
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		System.out.println("");
+		System.out.println("蛤蛤！我能破解你的加密程序！//戏精附体 (￣_￣|||)，密码是 123");
+		System.out.println("请输入破解程序启动密码：");
+		int a = sc.nextInt();
+		if(a==123){
+			System.out.println("通过验证！");
+		}else{
+			System.out.println("密码错误！");
+			return;
+		}
+		
+		System.out.println("------------------启动破解");
+
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i]);
+			index ++;
+		}
+		System.out.println();
+		System.out.println("------------------正在破解");
+		int temp = arr[0];
+		arr[0] = arr[index-1];
+		arr[index-1] = temp;
+		
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] += 10;
+			arr[i] -= 5; 
+			arr[i] %= 10;
+		}
+		int b = 0;
+		for (int start = 0,end = arr.length-1; start < arr.length/2; start++,end--) {
+			 b = arr[start];
+			 arr[start] = arr[end];
+			 arr[end] = b;
+		}
+		System.out.println("********");
+		System.out.println("------------------破解成功");
+		for (int i = 0; i < index; i++) {
+			System.out.print(arr[i]);
+		}
 	}
 }
