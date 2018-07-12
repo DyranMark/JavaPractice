@@ -1,14 +1,10 @@
 package bk1;
-
-import java.security.Timestamp;
 import java.util.Scanner;
-import java.util.StringTokenizer;
 
 public class Class_1 {
-
-	@SuppressWarnings("resource")
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
+
 		// System.out.print("Hello !");
 		// byte b1=3,b2=4,b;
 		// b=b1+b2;
@@ -1065,42 +1061,125 @@ public class Class_1 {
 			最后将第一位和最后一位数字交换。 请任意给定一个小于8位的整数，
 			然后，把加密后的结果在控制台打印出来。 
 			*/
-		Scanner sc = new Scanner(System.in);
-		System.out.println("请输入八位整数：");
-		int receive = sc.nextInt();
-		int [] arr = new int[8];
-		int index = 0;
-		while(receive>0&receive<=8){
-			arr[index] = receive%10;//从个位开始录入数据，完成倒序和录入数组
-			index++;
-			receive /= 10;//每次循环进一位，个、十、百、千、万、、、、
-			
-		}
-		System.out.println("------------------录入数据");
-		for (int i = 0; i < arr.length; i++) {
-			System.out.print(arr[i]);
-		}
-		//每位数字都加上5
-		for (int i = 0; i < arr.length; i++) {
-			arr[i] += 5;
-			arr[i] %= 10;
-		}
-		//首尾交换
-		int temp = arr[0];
-		arr[0] = arr[index-1]; //index-1,从0开始自增，到7时遍历完成，但仍会再执行一次自增，所以 -1，直接写arr[7]报超出错误
-		arr[index-1] = temp;
-		
-		System.out.println();
-		System.out.println("------------------加密成功");
-		for (int i = 0; i < arr.length; i++) {
-			System.out.print(arr[i]);
-		}
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("请输入八位整数：");
+//		int receive = sc.nextInt();
+//		int [] arr = new int[8];
+//		int index = 0;
+//		while(receive>0&receive<=8){
+//			arr[index] = receive%10;//从个位开始录入数据，完成倒序和录入数组
+//			index++;
+//			receive /= 10;//每次循环进一位，个、十、百、千、万、、、、
+//			
+//		}
+//		System.out.println("------------------录入数据");
+//		for (int i = 0; i < arr.length; i++) {
+//			System.out.print(arr[i]);
+//		}
+//		//每位数字都加上5
+//		for (int i = 0; i < arr.length; i++) {
+//			arr[i] += 5;
+//			arr[i] %= 10;
+//		}
+//		//首尾交换
+//		int temp = arr[0];
+//		arr[0] = arr[index-1]; //index-1,从0开始自增，到7时遍历完成，但仍会再执行一次自增，所以 -1，直接写arr[7]报超出错误
+//		arr[index-1] = temp;
+//		
+//		System.out.println();
+//		System.out.println("------------------加密成功");
+//		for (int i = 0; i < arr.length; i++) {
+//			System.out.print(arr[i]);
+//		}
 		
 		//破解
-		Crack(arr);
+//		Crack(arr);
 		
-    }
-	
+		
+		//Java中的参数传递问题：
+//		    int a = 10;
+//	        int b = 20;
+//	        System.out.println(" 基本类型：形式参数的改变对实际参数没有影响。//int byte short long  /char /double ");
+//	        System.out.println("First：a:"+a+",b:"+b); //a:10,b:20
+//	        change(a,b);
+//	        System.out.println("End：a:"+a+",b:"+b); //???    a:10,b:20
+//
+//	        System.out.println("");
+//	        
+//	        System.out.println("引用类型：形式参数的改变直接影响实际参数。//class int[] interface");
+//	        int[] arr = {1,2,3,4,5};
+//	        System.out.println("First:"+arr[3]);
+//	        change(arr);
+//	        System.out.println("End:"+arr[3]); //???    4
+//	    }
+//
+//	    public static void change(int a,int b) { //a=10,b=20
+//	        System.out.println("C1：a:"+a+",b:"+b); //a:10,b:20
+//	        a = b;    //a=20
+//	        b = a + b; //b=40
+//	        System.out.println("C2：a:"+a+",b:"+b); //a:20,b:40
+//	    }
+//
+//	    public static void change(int[] arr) { //arr={1,2,3,4,5};
+//	    	System.out.println("C1:"+arr[3]);
+//	        for(int x=0; x<arr.length; x++) {
+//	            if(arr[x]%2==0) {
+//	                arr[x]*=2;
+//	            }
+//	        }
+//	        System.out.println("C2:"+arr[3]);
+//	        //arr={1,4,3,8,5};
+//    }
+		
+		//PhoneTest,面向对象 Java_06_03 
+//		Phone c = new Phone();
+//		//输出属性
+//		System.out.print(c.brand+" "+c.color+" "+c.price);
+//		//调用方法
+//		System.out.println(" ");
+//		c.Call();
+//		c.Message();
+//		
+//		//Student 测试，
+//		Student st = new Student();
+//		System.out.println(st.address);
+//		System.out.println(st.name);
+//		System.out.println(st.age);
+//		st.Study();
+//		st.Eat();
+//		st.Sleep();
+//		
+//		//参数名是类名test, st 是学生类引用参数
+//		c.Game(st);
+		
+		
+		
+		//Java_07,成员变量、局部变量， 
+		//Variable v = new Variable();
+		//System.out.println(v.num);
+		//v.show();
+		
+		/*
+		匿名对象：就是没有名字的对象。
+		
+		匿名对象的应用场景：
+			A:调用方法，仅仅只调用一次的时候。
+				注意：调用多次的时候，不适合。
+				那么，这种匿名调用有什么好处吗?
+					有，匿名对象调用完毕就是垃圾。可以被垃圾回收器回收。
+			B:匿名对象可以作为实际参数传递
+		 */
+		//匿名即省略    Class  c = new Class(); 这一步，直接 new 一个 Class 对象
+		//匿名对象
+//		new Phone();
+//		//匿名对象调用方法
+//		new Student().Eat();
+//		//匿名对象座位实际参数传递
+//		new Phone().Game(new Student());
+		
+		
+	}
+		
 
 	/*
 	 * 方法：完成特定功能的代码块。
@@ -1386,4 +1465,6 @@ public class Class_1 {
 			System.out.print(arr[i]);
 		}
 	}
+
 }
+
