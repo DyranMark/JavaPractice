@@ -1142,9 +1142,9 @@ public class Class_1 {
 //		
 //		//Student 测试，
 //		Student st = new Student();
-//		System.out.println(st.address);
-//		System.out.println(st.name);
-//		System.out.println(st.age);
+//		System.out.println(st.getName());
+//		System.out.println(st.getAge());
+//		System.out.println(st.getAddress());
 //		st.Study();
 //		st.Eat();
 //		st.Sleep();
@@ -1177,7 +1177,35 @@ public class Class_1 {
 //		//匿名对象座位实际参数传递
 //		new Phone().Game(new Student());
 		
+		//封装和Private关键字
+		//测试学生类
+//		Student s = new Student();
+//		System.out.println(s.getName());
+//		s.setName("王境泽");
+//		System.out.println(s.getName());
+//		
+//		// 创建一个对象，先通过getXxx()方法输出成员变量的值。这一次的结果是：null---0---null
+//		// 然后通过setXxx()方法给成员变量赋值。再次输出结果。这一次的结果是：三星---2999---土豪金
+//		Phone p = new Phone();
+//		System.out.println(p.getBrand()+" "+p.getColor()+" "+p.getPrice());
+//		p.setBrand("三星");
+//		p.setColor("红色");
+//		p.setPrice(3666);
+//		System.out.println(p.getBrand()+" "+p.getColor()+" "+p.getPrice());
 		
+		//测试 Student 的构造方法
+//		Student st = new Student();
+//		System.out.println(st);	
+//		//多参数构造方法，简化对象实例化
+//		Student st1 = new Student("江南",19,"北京XXX小区");
+//		st1.Show();
+		
+		//Staff 类测试   (姓名，年龄，工号)
+		Staff st = new Staff("手岛葵",35,1);
+		st.show();
+		
+		Phone p = new Phone();
+		p.Math();
 	}
 		
 
