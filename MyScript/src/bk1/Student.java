@@ -1,6 +1,6 @@
 package bk1;
 
-public class Student {
+public class Student extends People {
 
 	/*
 	 * 事物： 属性 事物的信息描述 行为 事物的功能
@@ -21,64 +21,69 @@ public class Student {
 	 * 
 	 * 首先我们应该定义一个类，然后完成类的成员。
 	 */
-	private String name;
-	private int age ;
 	private String address;
-	
-	/*
-	构造方法：
-		给对象的数据进行初始化
+	int age = 20;
 
-	格式：
-		A:方法名与类名相同
-		B:没有返回值类型，连void都没有
-		C:没有具体的返回值
-*/
-	//构造方法，名字和类名一致，没有返回值类型，没有具体返回值
-	public Student(){	
-	}
-	public Student(String name,int age,String address){
-		System.out.println("这是构造方法。");
-		this.name = name;
-		this.age = age;
-		this.address = address;
+	/*
+	 * 构造方法： 给对象的数据进行初始化
+	 * 
+	 * 格式： A:方法名与类名相同 B:没有返回值类型，连void都没有 C:没有具体的返回值
+	 */
+	// 构造方法，名字和类名一致，没有返回值类型，没有具体返回值
+	 Student() {
+		System.out.println("Student,construction method");
 	}
 	
-	public void Study(){
+	 Student(int age,String sex,String name){
+		super(age,sex,name);
+	}
+
+	public void Study() {
 		System.out.println("学如逆水行舟，不进则退。");
 	}
-	public void Eat(){
-		System.out.println("我要学习，忘食！");
+
+	// 代码块概述和讲解
+	static {
+		System.out.println("Student,static code");
 	}
-	public void Sleep(){
-		System.out.println("我要学习，废寝！");
-	}
-	public void Show(){
-		System.out.println("姓名："+name);
-		System.out.println("年龄："+age);
-		System.out.println("地址："+address);
+
+	{
+		System.out.println("Student,construction code");
 	}
 	
-	
-	
-	
-	
-	
-	public String getName() {
-		return name;
+	/*
+	问题是：
+		我不仅仅要输出局部范围的num，还要输出本类成员范围的num。怎么办呢?
+		我还想要输出父类成员范围的num。怎么办呢?
+			如果有一个东西和this相似，但是可以直接访问父类的数据就好了。
+			恭喜你，这个关键字是存在的：super。
+			
+	this和super的区别?
+		分别是什么呢?
+			this代表本类对应的引用。
+			super代表父类存储空间的标识(可以理解为父类引用,可以操作父类的成员)
+
+		怎么用呢?
+			A:调用成员变量
+				this.成员变量 调用本类的成员变量
+				super.成员变量 调用父类的成员变量
+			B:调用构造方法
+				this(...)	调用本类的构造方法
+				super(...)	调用父类的构造方法
+			C:调用成员方法
+				this.成员方法 调用本类的成员方法
+				super.成员方法 调用父类的成员方法
+*/
+	public void showmessage(){
+		System.out.println(age);
+		System.out.println(this.age);
+		System.out.println(super.age);
 	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public int getAge() {
-		return age;
-	}
-	public void setAge(byte age) {
-		this.age = age;
-	}
+
 	public String getAddress() {
 		return address;
 	}
+
 	public void setAddress(String address) {
 		this.address = address;
 	}

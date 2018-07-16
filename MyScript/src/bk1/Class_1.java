@@ -1200,12 +1200,21 @@ public class Class_1 {
 //		Student st1 = new Student("江南",19,"北京XXX小区");
 //		st1.Show();
 		
-		//Staff 类测试   (姓名，年龄，工号)
-		Staff st = new Staff("手岛葵",35,1);
-		st.show();
+		//Staff 类测试   (姓名，年龄，工号),面向对象，
+//		Staff st = new Staff("手岛葵",35,1);
+//		st.show();
+//		
+//		Phone p = new Phone();
+//		p.Math();
+		People pe = new People(18,"女","董静丹");
+		pe.show();
+		Student st = new Student();
+		st.setAge(18);
+		st.setSex("男");
+		st.setName("陈独秀");
+		System.out.println(st.age+st.sex+st.name);
 		
-		Phone p = new Phone();
-		p.Math();
+		
 	}
 		
 
