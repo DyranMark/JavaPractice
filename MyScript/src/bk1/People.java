@@ -1,7 +1,7 @@
 package bk1;
 
 public class People {
-	int age;
+	int age = 25;
 	String sex;
 	String name;
 	
@@ -17,14 +17,15 @@ public class People {
 	static{
 		System.out.println("People,static code");
 	}
+	
 	{
 		System.out.println("People,construction code");
 	}
 	public void clothing(){
 		System.out.println("衣");
 	}
-	public void eat(){
-		System.out.println("食");
+	public  void  eat(){
+		System.out.println("自己做饭");
 	}
 	public void reside(){
 		System.out.println("住");

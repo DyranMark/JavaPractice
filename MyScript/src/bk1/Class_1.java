@@ -1206,15 +1206,59 @@ public class Class_1 {
 //		
 //		Phone p = new Phone();
 //		p.Math();
-		People pe = new People(18,"女","董静丹");
-		pe.show();
-		Student st = new Student();
-		st.setAge(18);
-		st.setSex("男");
-		st.setName("陈独秀");
-		System.out.println(st.age+st.sex+st.name);
+//		People pe = new People(18,"女","董静丹");
+//		pe.show();
+//		Student st = new Student();
+//		st.setAge(18);
+//		st.setSex("男");
+//		st.setName("陈独秀");
+//		System.out.println(st.age+st.sex+st.name);
 		
+//		String a = Integer.toBinaryString(25);
+//		System.out.println(a);
 		
+		/*Java_09 多态
+		 * 
+		 * 多态中的成员访问特点：
+		A:成员变量
+			编译看左边，运行看左边。
+		B:构造方法
+			创建子类对象的时候，访问父类的构造方法，对父类的数据进行初始化。
+		C:成员方法
+			编译看左边，运行看右边。
+			（由于成员方法存在方法重写，所以它运行看右边。）
+		D:静态方法
+			编译看左边，运行看左边。
+			(静态和类相关，算不上重写，所以，访问还是左边的)
+		 * */
+		
+//		People p = new Student();
+//		p.eat();	//输出子类得 eat 方法
+//		System.out.println(p.age);	//输出父类的 age 25
+		
+		/*多态应用
+		 * */
+//		Student s = new Student();
+//		Variable.StudentTool(s);//简化（整合）调用过程
+//		
+//		Staff a = new Staff("Chill", 18, 1);
+//		Variable.StaffTool(a);
+		
+		/*
+		多态的弊端：
+			不能使用子类的特有功能。
+	*/
+//		People p = new Student();
+//		p.eat();
+		//p.Study();//指向子类的父类对象，无法调用子类方法		
+		
+		/*可以将父类对象强转为子类对象
+		 * */
+		People p = new Student();
+		Student s = (Student)p;
+		p.eat();
+		s.eat();
+		s.Study();
 	}
 		
 

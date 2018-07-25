@@ -51,6 +51,10 @@ public class Student extends People {
 		System.out.println("Student,construction code");
 	}
 	
+	public  void eat(){
+		System.out.println("学生食堂");
+	}
+	
 	/*
 	问题是：
 		我不仅仅要输出局部范围的num，还要输出本类成员范围的num。怎么办呢?
