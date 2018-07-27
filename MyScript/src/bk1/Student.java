@@ -51,8 +51,17 @@ public class Student extends People {
 		System.out.println("Student,construction code");
 	}
 	
-	public  void eat(){
+	public void clothing(){
+		System.out.println("校服");
+	}
+	public void eat(){
 		System.out.println("学生食堂");
+	}
+	public void reside(){
+		System.out.println("寝室");
+	}
+	public void travel(){
+		System.out.println("公交");
 	}
 	
 	/*

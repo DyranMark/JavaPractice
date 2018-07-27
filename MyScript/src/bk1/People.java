@@ -1,6 +1,6 @@
 package bk1;
 
-public class People {
+abstract class People {
 	int age = 25;
 	String sex;
 	String name;
@@ -21,21 +21,11 @@ public class People {
 	{
 		System.out.println("People,construction code");
 	}
-	public void clothing(){
-		System.out.println("衣");
-	}
-	public  void  eat(){
-		System.out.println("自己做饭");
-	}
-	public void reside(){
-		System.out.println("住");
-	}
-	public void travel(){
-		System.out.println("行");
-	}
-	public void show(){
-		System.out.println(age+sex+name);
-	}
+	public abstract void clothing();
+	abstract void eat();
+	abstract void reside();
+	abstract void travel();
+	
 	
 	public int getAge() {
 		return age;

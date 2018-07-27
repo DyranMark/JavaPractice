@@ -1254,12 +1254,17 @@ public class Class_1 {
 		
 		/*可以将父类对象强转为子类对象
 		 * */
-		People p = new Student();
+		
+		People p = new Student();//引用P对象，实例化Student对象
 		Student s = (Student)p;
 		p.eat();
 		s.eat();
 		s.Study();
+		
+		//抽象类不能被实例化,上面的实例化对象是 Student,引用了People
+		//People r = new People();
 	}
+	
 		
 
 	/*
