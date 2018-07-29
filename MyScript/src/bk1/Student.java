@@ -23,6 +23,15 @@ public class Student extends People {
 	 */
 	private String address;
 	int age = 20;
+	public final void setAge(int age) {
+		this.age = age;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	final String name = "Henry";
 
 	/*
 	 * 构造方法： 给对象的数据进行初始化
@@ -92,6 +101,7 @@ public class Student extends People {
 		System.out.println(this.age);
 		System.out.println(super.age);
 	}
+	
 
 	public String getAddress() {
 		return address;

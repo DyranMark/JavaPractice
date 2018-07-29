@@ -1,7 +1,7 @@
 package bk1;
 
 abstract class People {
-	int age = 25;
+	final int age = 25;
 	String sex;
 	String name;
 	
@@ -9,7 +9,7 @@ abstract class People {
 		System.out.println("People,construction method");//construction method
 	}
 	People(int age,String sex,String name){
-		this.age = age;
+		//this.age = age;
 		this.sex = sex;
 		this.name = name;
 	}
@@ -27,12 +27,12 @@ abstract class People {
 	abstract void travel();
 	
 	
-	public int getAge() {
-		return age;
-	}
-	public void setAge(int age) {
-		this.age = age;
-	}
+//	public int getAge() {
+//		return age;
+//	}
+//	public void setAge(int age) {
+//		this.age = age;
+//	}
 	public String getSex() {
 		return sex;
 	}

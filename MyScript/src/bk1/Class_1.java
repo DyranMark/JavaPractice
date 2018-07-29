@@ -1255,14 +1255,25 @@ public class Class_1 {
 		/*可以将父类对象强转为子类对象
 		 * */
 		
-		People p = new Student();//引用P对象，实例化Student对象
-		Student s = (Student)p;
-		p.eat();
-		s.eat();
-		s.Study();
+//		People p = new Student();//引用P对象，实例化Student对象
+//		Student s = (Student)p;
+//		p.eat();
+//		s.eat();
+//		s.Study();
 		
 		//抽象类不能被实例化,上面的实例化对象是 Student,引用了People
 		//People r = new People();
+		
+		//final 引用类型和基本类型测试
+		//基本类型
+//		final int age = 10;
+//		//age = 20;
+//		//引用类型
+//		Student s = new Student();
+//		System.out.println(s.age);
+//		s.setAge(100);
+//		System.out.println(s.age);
+		
 	}
 	
 		
