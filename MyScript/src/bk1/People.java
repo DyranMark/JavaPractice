@@ -22,10 +22,10 @@ abstract class People {
 		System.out.println("People,construction code");
 	}
 	public abstract void clothing();
-	abstract void eat();
-	abstract void reside();
-	abstract void travel();
-	
+//	abstract void eat();
+//	abstract void reside();
+//	abstract void travel();
+//	
 	
 //	public int getAge() {
 //		return age;

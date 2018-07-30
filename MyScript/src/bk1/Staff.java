@@ -20,6 +20,8 @@ public class Staff {
 	private String name;
 	private int age;
 	private int number;
+	public Staff() {
+	}
 	
 	public Staff(String name,int age,int number){
 		this.age = age;
@@ -31,7 +33,12 @@ public class Staff {
 		System.out.println(name);
 		System.out.println(age);
 	}
-	
+	public void test(People p){
+		p.clothing();
+	}
+	public People test2(){
+		return new Student();
+	}
 	
 	
 	public String getName() {

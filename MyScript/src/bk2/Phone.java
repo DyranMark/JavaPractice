@@ -1,6 +1,8 @@
-package bk1;
+package bk2;
 
 import java.util.Scanner;
+
+import bk1.Student;
 
 public class Phone {
 	private int price;
@@ -16,8 +18,7 @@ public class Phone {
 	 * 创建一个对象，先通过getXxx()方法输出成员变量的值。这一次的结果是：null---0---null
 	 * 然后通过setXxx()方法给成员变量赋值。再次输出结果。这一次的结果是：三星---2999---土豪金
 	 */
-	@SuppressWarnings("unused")
-	private void Call(){
+	public void Call(){
 		System.out.println("18075649594");
 	}
 	public void Message(){

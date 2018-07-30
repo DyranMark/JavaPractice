@@ -1,6 +1,8 @@
 package bk1;
 import java.util.Scanner;
 
+import bk2.Phone;
+
 public class Class_1 {
 	public static void main(String[] args) {
 
@@ -1273,6 +1275,20 @@ public class Class_1 {
 //		System.out.println(s.age);
 //		s.setAge(100);
 //		System.out.println(s.age);
+		
+		//调用 staff 类中的 test 方法
+//		Staff f = new Staff();
+//		People p = new Student();//2、new People 对象需要重写其抽象方法，Student 已实现该方法，所以 new Student 对象
+//		f.test(p);//1、需要传入 People 对象,输出 Student 类中的重写内容： 校服
+		
+		//调用 PEOPLE 中的 clothing 方法
+//		Staff f = new Staff();
+//		People p = f.test2();//f.test2 == new Student();   (你的好友：意义怪上线！)
+//		p.clothing();//输出 Student 类中的重写内容： 校服      意义何在？
+		
+		//访问不通包内的类的方法
+//		Phone ph = new Phone();
+//		ph.Call();
 		
 	}
 	
