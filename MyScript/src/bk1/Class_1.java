@@ -1,7 +1,6 @@
 package bk1;
 import java.util.Scanner;
 
-import bk2.Phone;
 
 public class Class_1 {
 	public static void main(String[] args) {
@@ -977,11 +976,11 @@ public class Class_1 {
 
 		需求：打印杨辉三角形(行数可以键盘录入)
 		
-		1
-		1 1	
-		1 2 1
-		1 3 3 1
-		1 4 6 4 1 
+		      1
+		     1 1	
+		    1 2 1
+		   1 3 3 1
+		  1 4 6 4 1 
 		1 5 10 10 5 1
 
 		分析：看这种图像的规律
@@ -1290,9 +1289,429 @@ public class Class_1 {
 //		Phone ph = new Phone();
 //		ph.Call();
 		
+		//内部类访问测试
+//		Class_1.inner ci = new Class_1().new inner();
+//		ci.show();
+//		
+//	}
+//	private int num = 20;
+//		class inner{
+//			int num = 30;				
+//				public void show(){
+//					int num = 35;
+//					System.out.println(num);
+//					System.out.println(this.num);
+//					System.out.println(Class_1.this.num);
+//			}
+		
+//		// 查找字符中包含子字符的数量
+//		String Max = "adfgjavaeaeegdfgagdjavabafgjavaerhfjavaladoijgjavanckfegnb";
+//		String Min = "java";
+//		Class_1 c = new Class_1();
+//		int count = c.Count(Max, Min);
+//		System.out.println(count);
+		
+//		Scanner sc = new Scanner(System.in);
+//		int b = sc.nextInt();
+//		String a = sc.nextLine();
+//		System.out.println(a+" "+b);
+		
+		// hasNextInt 判断输入数据的类型是否为 Int
+//		if(sc.hasNextInt()){
+//			int x = sc.nextInt();
+//			System.out.println(x);
+//		}else{
+//			System.out.println("Error Input!");
+//		}
+//		//节省内存资源胡好习惯
+//		sc.close();
+		//字符串转换为字符数组
+		//String str = "The storm outside gave the room a sinister aspect";
+		
+//		//需求：统计一个字符串中大写字母字符，小写字母字符，数字字符出现的次数。(不考虑其他字符)
+//		String phrase = "The strom outside gave the room a sinister aspect.123456TTTTTTT";
+//		String ph = "1qwQWD";
+//		GetChar(phrase);
+		
+//		//byte 转  String
+//		byte b [] = {-18,-67,-56,-49,-52,-3};
+//		ByteToString(b);
+//		
+//		//字符串转字节码
+//		String s = "白居易";
+//		StringToByte(s);
+		
+		//字符串
+//		String a = "1";
+//		String a1= "1";
+//		String b = new String("1");
+//		String b1= new String("1");
+//		System.out.println("a==a1:"+(a==a1));
+//		System.out.println("a==b:"+(a==b));
+//		System.out.println("b==b1:"+(b==b1));
+//		
+//		System.out.println("a.equals a1:"+a.equals(a1));
+//		System.out.println("a.equals b:"+a.equals(b));
+//		System.out.println("b.equals b1:"+b.equals(b1));
+//		
+		 // B:字符串的拼接
+//          String s1 = "hello";
+//          String s2 = "world";
+//          String s3 = "helloworld";
+//          String s4 = "hello"+"world";
+//          System.out.println(s3 == s1 + s2);// false
+//          System.out.println(s3 == s4);
+//          System.out.println(s3.equals((s1 + s2)));// true
+		
+		//猜数字小游戏	Math.random() * 100		
+//		int answer = (int) (Math.random() * 100);
+//		// System.out.println(answer);
+//		while (true) {
+//			Scanner sc = new Scanner(System.in);
+//			System.out.println("输入0~100的数：");
+//			int input = sc.nextInt();
+//			if (input > answer) {
+//				System.out.println("TOO BIG");
+//			} else if (input < answer) {
+//				System.out.println("TOO SMALL");
+//			} else {
+//				System.out.println("GOT IT");
+//				sc.close();
+//				break;
+//			}
+//		}
+		
+		
+//		String s1 = "helloworld";
+//		String s2 = "helloworld";
+//		String s3 = "HelloWorld";
+//
+//		// boolean equals(Object obj):比较字符串的内容是否相同,区分大小写
+//		System.out.println("equals:" + s1.equals(s2));//true
+//		System.out.println("equals:" + s1.equals(s3));//false
+//		System.out.println("-----------------------");
+//
+//		// boolean equalsIgnoreCase(String str):比较字符串的内容是否相同,忽略大小写
+//		System.out.println("equals:" + s1.equalsIgnoreCase(s2));//true
+//		System.out.println("equals:" + s1.equalsIgnoreCase(s3));//true
+//		System.out.println("-----------------------");
+//
+//		// boolean contains(String str):判断大字符串中是否包含小字符串
+//		System.out.println("contains:" + s1.contains("hello"));//true
+//		System.out.println("contains:" + s1.contains("hw"));//false
+//		System.out.println("-----------------------");
+//
+//		// boolean startsWith(String str):判断字符串是否以某个指定的字符串开头
+//		System.out.println("startsWith:" + s1.startsWith("h"));//true
+//		System.out.println("startsWith:" + s1.startsWith("hello"));//true
+//		System.out.println("startsWith:" + s1.startsWith("world"));//false
+//		System.out.println("-----------------------");
+//		
+//		//// 练习：boolean endsWith(String str)
+//		System.out.println("endwhit:"+s1.endsWith("d"));
+//		System.out.println("endwhit:"+s1.endsWith("h"));
+//		System.out.println("endwhit:"+s1.endsWith("world"));
+		
+		//登陆模拟
+		//Login();
+		
+		//将字符串改为首字母大写
+//		String s = "helloWORLD";
+//		String s1 = s.substring(0,1).toUpperCase().concat(s.substring(1).toLowerCase());
+//		System.out.println(s1);
+		
+		
+		
+		//无聊，来实现一遍三角形
+//		for (int i = 1; i < 10; i++) {
+//			for (int j = 0; j < i; j++) {
+//				System.out.print("*");
+//			}
+//			System.out.println();
+//		}
+//		System.out.println();
+//		
+//		for (int i = 0; i < 10; i++) {
+//			for (int j = 10; j > i; j--){
+//				System.out.print("*");
+//			}
+//			System.out.println();
+//		}
+//		System.out.println();
+//		
+//		for (int i = 1; i < 10; i++) {	
+//			for (int j = 10; j > i; j--) {
+//				System.out.print(" ");
+//			}
+//			for (int j = 0; j < i; j++) {
+//				System.out.print("*");
+//			}
+//			for (int j = 0; j < i-1; j++) {
+//				System.out.print("*");
+//			}
+//			System.out.println();
+//		}
+//		System.out.println();
+//		
+//		for (int i = 1; i < 10; i++) {
+//			for (int j = 0; j < i; j++) {
+//				System.out.print(" ");
+//			}
+//			for (int j = 10; j > i; j--) {
+//				System.out.print("*");
+//			}
+//			for (int j = 10; j > i+1; j--) {
+//				System.out.print("*");
+//			}
+//			System.out.println();
+//		}
+		//杨辉三角形
+//		int arr [][] = new int[10][];
+//		for (int i = 0; i < arr.length; i++) {
+//			arr[i] = new int[i+1];
+//			for (int j = arr.length; j > i; j--) {
+//				System.out.print("  ");
+//			}
+//			for (int j = 0; j < arr[i].length; j++) {
+//				if(j==0||j==arr[i].length-1){
+//					arr[i][j] = 1;
+//				}else{
+//					arr[i][j] = arr[i-1][j-1]+arr[i-1][j];
+//				}
+//				System.out.printf("%4d",arr[i][j]);
+//			}
+//			System.out.println();
+//		}
+		
+//		int arr[]={1,7,12,2,22,30,21,6,5,4,3,56,59,60,80,90,100,8};
+//		for (int i = 0; i < arr.length; i++) {
+//			System.out.print(arr[i]+" ");
+//		}
+//		System.out.println();
+		//arry_1(arr);
+		//arry_2(arr);
+//		arry_3(arr);
+		
+		System.out.println(Integer.toString(24, 16));
 	}
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/*
+	 *方法区==============================================分割线============================================== 
+	 */
+	
+	
+	/*冒泡排序
+	 * 1、获取数组长度，创建  i=0 开始遍历整个数组，最后一位成员下标为长度-1
+	 * 2、创建 j=i+1,i的后一位成员位置与i进行比较，若j<i，则 j前移,j同样只需循环到最大下标处
+	 * 3、i 每循环一次，数组最后一位即为 最大的数，因此 j 只需循环数组长度 - i 次
+	 * */
+	public static void arry_1(int arr[]) {
+			for (int i = 0; i < arr.length-1; i++) {
+				for (int j = 0; j < arr.length-1-i; j++) {
+					if (arr[j]>arr[j+1]) {
+						int temp = arr[j];
+						arr[j] = arr[j+1];
+						arr[j+1] = temp;
+					}
+				}
+				System.out.println("第"+i+"轮循环");
+			}
+			for (int i = 0; i < arr.length; i++) {
+				System.out.print(arr[i]+" ");
+			}
+		}
+	//冒泡排序优化版
+	public static void arry_2(int [] arr){
+		boolean b = true;
+		int k = arr.length;
+		int count = 0;
+		//判断是否产生了交换操作，没有产生就证明已经排序完成，剩下的对比遍历操作即可省略
+		while(b){
+			b=false;
+			for (int i = 0; i < k-1; i++) {
+				if(arr[i]>arr[i+1]){
+					int temp = arr[i];
+					arr[i] = arr[i+1];
+					arr[i+1] = temp;
+					b = true;
+				}	
+			}
+			count ++;
+			System.out.println("第"+count+"轮循环");
+			k--;
+		}
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i]+" ");
+		}
+	}
+	//冒泡排序最终优化版
+	public static void arry_3(int [] arr){
+		int k;
+		int a = 0;
+		int flag = arr.length;//flag来记录最后交换的位置，也就是排序的尾边界
 		
+		while(flag > 0){
+			k = flag;//保存边界
+			flag = 0;
+			for (int i = 0; i < k-1; i++) {
+				if(arr[i]>arr[i+1]){
+					int j = arr[i+1];
+					arr[i+1] = arr[i];
+					arr[i] = j;
+					flag = i+1;
+				}
+			}
+			a++;
+			System.out.println("第"+a+"轮循环");
+		}
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i]+" ");
+		}
+	}
+	
+	//联动Login 小游戏
+	public static void game(){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("输入数字");
+		int a = sc.nextInt();
+		System.out.println("抱歉，并没有什么小游戏,这是你输入的数字:"+a);
+		sc.close();
+	}
+	
+	/*
+	 * 模拟登录,给三次机会,并提示还有几次。
+	 * 
+	 * 分析：
+	 * 		A:定义用户名和密码。已存在的。
+	 * 		B:键盘录入用户名和密码。
+	 * 		C:比较用户名和密码。
+	 * 			如果都相同，则登录成功
+	 * 			如果有一个不同，则登录失败
+	 * 		D:给三次机会，用循环改进，最好用for循环。
+	 */
+	public static void Login(){
+		String sun = "admin",spw = "123";
+		for (int i = 0; i < 2; i++) {
+			@SuppressWarnings("resource")
+			Scanner sc = new Scanner(System.in);
+			System.out.println("输入用户名：");
+			String un = sc.nextLine();
+			System.out.println("输入密码：");
+			String pw = sc.nextLine();
+			if(sun.equals(un)&&spw.equals(pw)){
+				System.out.println("成功登陆");
+				System.out.println("开始小游戏");
+				game();
+				sc.close();
+				break;
+			}else{
+				System.out.println("用户名或密码错误，还剩"+(2-i)+"次机会");
+			}
+		}
+	}
+	
+	//把字节数组转换成字符串
+	public static String ByteToString(byte [] bytes){
+		String s = new String(bytes);
+		System.out.println(s);
+		return s;
+	}
+	//字符串转换字节码
+	public static byte[] StringToByte(String s){
+		byte b [] = s.getBytes();
+		for (int i = 0; i < b.length; i++) {
+			System.out.print(b[i]+" ");
+		}
+		return b;
+	}
+
+	//需求：统计一个字符串中大写字母字符，小写字母字符，数字字符出现的次数。(不考虑其他字符)
+	public static void GetChar(String s){
+		int upper=0,lower=0,number=0;
+		for (int i = 0; i < s.length(); i++) {
+			char ch = s.charAt(i);
+			if(ch>='A'&&ch<='Z'){
+				upper++;
+			}else if(ch>='a'&&ch<='z'){
+				lower++;
+			}else if(ch>='0'&&ch<='9'){
+				number++;
+			}
+		}
+		System.out.println("大写字母："+upper+"小写字母： "+lower+"数字："+number);
+	}
+	
+	// 计数子字符串出现次数
+	public int Count(String Max, String Min) {
+		int count = 0;
+		int index;
+
+		while ((index = Max.indexOf(Min)) != -1) {
+			count++;
+			Max = Max.substring(Min.length() + index);
+		}
+		return count;
+	}
+	
+
 
 	/*
 	 * 方法：完成特定功能的代码块。
@@ -1580,4 +1999,3 @@ public class Class_1 {
 	}
 
 }
-

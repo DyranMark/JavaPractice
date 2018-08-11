@@ -5,6 +5,11 @@ class Variable {
 	
 	private  Variable(){}
 	
+	public Variable(int num) {
+		super();
+		this.num = num;
+	}
+
 	public void show(){
 		int num2 = 20;
 		System.out.println(num2);
