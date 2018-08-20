@@ -1674,22 +1674,56 @@ public class Class_1 {
 		 * 
 		 * 		注意：ListIterator可以实现逆向遍历，但是必须先正向遍历，才能逆向遍历，所以一般无意义，不使用。
 		 */
-		List l = new ArrayList();
-		l.add("apple");
-		l.add("banana");
-		l.add("Pacific_Police");
-		l.add("Hate");
-		//listIterator
-		ListIterator lit = l.listIterator();
-		while(lit.hasNext()){
-			System.out.print(lit.next()+" ");
-		}
+//		List l = new ArrayList();
+//		l.add("apple");
+//		l.add("banana");
+//		l.add("Pacific_Police");
+//		l.add("Hate");
+//		//listIterator
+//		ListIterator lit = l.listIterator();
+//		while(lit.hasNext()){
+//			System.out.print(lit.next()+" ");
+//		}
+//		
+//		//	我有一个集合，如下，请问，我想判断里面有没有"Hate"这个元素，如果有，我就添加一个"Love"元素，请写代码实现。
+//		System.out.println(l.contains("Hate"));
+//		if(l.contains("Hate")){
+//			l.add("Love");
+//		}
 		
-		//	我有一个集合，如下，请问，我想判断里面有没有"Hate"这个元素，如果有，我就添加一个"Love"元素，请写代码实现。
-		System.out.println(l.contains("Hate"));
-		if(l.contains("Hate")){
-			l.add("Love");
-		}
+		/*
+		 * 泛型，示例
+		 * */
+//		List <String>arrayList = new ArrayList<String>();
+//		arrayList.add("今天晚上八点公司下暴雨");
+//		arrayList.add(820);		//报错：java.lang.Integer cannot be cast to java.lang.String
+//		
+//		for (int i = 0; i < arrayList.size(); i++) {
+//			String s = (String)arrayList.get(i);
+//			System.out.println(s);
+//		}
+		
+		//特性：泛型只在编译阶段有效	
+		
+		//泛型的类型参数只能是类类型（包括自定义类），不能是简单类型
+		//传入的实参类型需与泛型的类型参数类型相同，即为Integer.
+		Generic<Integer> Gi = new Generic<Integer>(23);
+		Generic<String> Gs = new Generic<String>("What's the matter?");
+		
+		System.out.println(Gi.getKey());
+		System.out.println(Gs.getKey());
+		//在泛型类中使用泛型的方法或成员变量定义的类型可以为任何的类型。
+		Generic g1 = new Generic(12345);
+		Generic g2 = new Generic(0.21);
+		Generic g3 = new Generic(false);
+		Generic g4 = new Generic("再回首");
+		
+		System.out.println(g1.getKey());
+		System.out.println(g2.getKey());
+		System.out.println(g3.getKey());
+		System.out.println(g4.getKey());
+		
+
 	}
 	
 
