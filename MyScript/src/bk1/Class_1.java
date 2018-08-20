@@ -1,8 +1,18 @@
 package bk1;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 import java.util.Scanner;
 
 
 public class Class_1 {
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void main(String[] args) {
 
 
@@ -1492,14 +1502,197 @@ public class Class_1 {
 		//arry_2(arr);
 //		arry_3(arr);
 		
-		System.out.println(Integer.toString(24, 16));
+		//Integer ，十进制转16进制，16可换 2、8、32
+//		System.out.println(Integer.toString(24, 16));
+//		//16进制转换 十进制
+//		System.out.println(Integer.parseInt("18", 16));
+	
+		//BigDecimal,在运算的时候，float类型和double很容易丢失精度，演示案例。所以，为了能精确的表示、计算浮点数，Java提供了BigDecimal
+		/*
+		 * 构造方法：
+		 * 		public BigDecimal(String val)
+		 * 
+		 * public BigDecimal add(BigDecimal augend)
+		 * public BigDecimal subtract(BigDecimal subtrahend)
+		 * public BigDecimal multiply(BigDecimal multiplicand)
+		 * public BigDecimal divide(BigDecimal divisor)
+		 * public BigDecimal divide(BigDecimal divisor,int scale,int roundingMode):商，几位小数，如何舍取
+		 */
+//		//普通运算
+//		System.out.println(0.09+0.01);
+//		//BigDecimal 运算
+//		BigDecimal bd1 = new BigDecimal("0.126");
+//		BigDecimal bd2 = new BigDecimal("0.01");
+//		BigDecimal bd3 = new BigDecimal("100");
+//		//加 add
+//		System.out.println(bd1.add(bd2));
+//		//减 subtract
+//		System.out.println(bd1.subtract(bd2));
+//		//乘 multiply 
+//		System.out.println(bd1.multiply(bd3));
+//		//除 divide 
+//		System.out.println(bd1.divide(bd2));
+//		//显示小数点后几位数字：ROUND_HALF_UP
+//		System.out.println(bd1.divide(bd3,4,BigDecimal.ROUND_HALF_UP));//四舍五入
+//		System.out.println(bd1.divide(bd3,4,BigDecimal.ROUND_HALF_DOWN));//大于0.5取整
+//		
+//		System.out.println("==============================");
+//		/*
+//		 * BigInteger:可以让超过Integer范围内的数据进行运算
+//		 * 
+//		 * 构造方法：
+//		 * BigInteger(String val) 
+//		 */
+//		//Integer i = new Integer(2147483648); //2147483648 超出最大值
+//		BigInteger Bi = new BigInteger("2147483648");
+//		System.out.println(Bi);
+//		System.out.println("Integer 最大值："+Integer.MAX_VALUE);//2147483647
+//		System.out.println("Integer 最小值："+Integer.MIN_VALUE);//-2147483647
+
+//		//calendar 日期功能
+//		Calendar T = Calendar.getInstance();
+//		int y = T.get(Calendar.YEAR);
+//		int m = T.get(Calendar.MONTH);
+//		int d = T.get(Calendar.DATE);
+//		//System.out.println(T);
+//		System.out.println(y+"/"+m+"/"+d);
+//		
+//		//正则表达式
+//		String qq = "33735";
+//		System.out.println(checkQQ(qq));
+		
+		
+		 /*
+		  * 集合：COLLECTION
+		  */
+//		//创建集合对象
+//		Collection<Object> c = new ArrayList<Object>();
+//		Collection<String> o = new ArrayList<String>();
+//		o.add("Moon");
+//		o.add("Light");
+//		o.add("Sun");
+//		o.add("shine");
+//		o.add("~~");
+//		//增
+//		c.add("Collection");
+//		c.add("world");
+//		c.add("java");
+//		c.add(250);
+//		
+//		//删
+//		//c.clear();
+//		
+//		//改
+//		c.remove(250);
+//		
+//		//查
+//		System.out.println(c.contains("java"));//查字段
+//		System.out.println(c.isEmpty());//查是否为空
+//		System.out.println(c.size());//查集合大小
+//		
+//		System.out.println(c);
+//		System.out.println(o);
+//			
+//		//以集合为单位的 增删改查
+//		//增	addAll
+//		System.out.println(c.addAll(o));
+//		System.out.println(c);
+//
+//		//查	containsAll
+//		System.out.println("集合C中，包含集合O："+c.containsAll(o));
+//		
+//		//改/删	 removeAll
+//		System.out.println(c.removeAll(o));
+//		System.out.println(c);
+//		
+//		//把集合转换成  Object 数组
+//		Object[] ob = c.toArray();
+//		
+//		System.out.println(Arrays.toString(ob));
+//		
+//		//迭代器，集合专用的遍历方式
+//		Collection<Object> co1 = new ArrayList<Object>();
+//		co1.add("a");
+//		co1.add("b");
+//		co1.add("5");
+//		co1.add("ha");
+//		co1.add("%432");
+//		co1.add("@hdfg");
+//		co1.add("153d");
+//		
+//		//迭代器
+//		Iterator<Object> it = co1.iterator();
+//		
+//		while(it.hasNext()){
+//			System.out.println(it.next());
+//		}
+//		
+//		/*LIST:
+//		 * List集合的特有功能：
+//		 * A:添加功能
+//		 * 		void add(int index,Object element):在指定位置添加元素
+//		 * B:获取功能
+//		 * 		Object get(int index):获取指定位置的元素
+//		 * C:列表迭代器
+//		 * 		ListIterator listIterator()：List集合特有的迭代器
+//		 * D:删除功能
+//		 * 		Object remove(int index)：根据索引删除元素,返回被删除的元素
+//		 * E:修改功能
+//		 * 		Object set(int index,Object element):根据索引修改元素，返回被修饰的元素
+//		 */
+//		List l = new ArrayList();	
+//		l.add("1");l.add("1");l.add(2);l.add(2);l.add(true);
+//		
+//		//添加位置	  add(site,context)
+//		l.add(5,"傲天");
+//		//获取位置 	get(site)
+//		System.out.println(l.get(4));
+//		
+//		//根据位置删除索引
+//		l.remove(1);
+//		
+//		//修改索引
+//		l.set(3, 3);
+//		
+//		Iterator it = l.iterator();
+//		while(it.hasNext()){
+//			System.out.print(it.next()+" ");
+//		}	
+//		System.out.println();
+//		for (int i = 0; i < l.size(); i++) {
+//			System.out.print(l.get(i)+" ");
+//		}
+		
+		/*
+		 * 列表迭代器：
+		 * 		ListIterator listIterator()：List集合特有的迭代器
+		 * 		该迭代器继承了Iterator迭代器，所以，就可以直接使用hasNext()和next()方法。
+		 * 
+		 * 特有功能：
+		 * 		Object previous():获取上一个元素
+		 * 		boolean hasPrevious():判断是否有元素
+		 * 
+		 * 		注意：ListIterator可以实现逆向遍历，但是必须先正向遍历，才能逆向遍历，所以一般无意义，不使用。
+		 */
+		List l = new ArrayList();
+		l.add("apple");
+		l.add("banana");
+		l.add("Pacific_Police");
+		l.add("Hate");
+		//listIterator
+		ListIterator lit = l.listIterator();
+		while(lit.hasNext()){
+			System.out.print(lit.next()+" ");
+		}
+		
+		//	我有一个集合，如下，请问，我想判断里面有没有"Hate"这个元素，如果有，我就添加一个"Love"元素，请写代码实现。
+		System.out.println(l.contains("Hate"));
+		if(l.contains("Hate")){
+			l.add("Love");
+		}
 	}
 	
-	
-	
-	
-	
-	
+
 	
 	
 	
@@ -1557,6 +1750,18 @@ public class Class_1 {
 	 *方法区==============================================分割线============================================== 
 	 */
 	
+	/*
+	 * 正则表达式，regex
+	 * */
+	public static boolean checkQQ(String qq) {
+		// String regex ="[1-9][0-9]{4,14}";
+		// //public boolean matches(String regex)告知此字符串是否匹配给定的正则表达式
+		// boolean flag = qq.matches(regex);
+		// return flag;
+
+		//return qq.matches("[1-9][0-9]{4,14}");
+		return qq.matches("[1-9]\\d{4,14}");
+	}
 	
 	/*冒泡排序
 	 * 1、获取数组长度，创建  i=0 开始遍历整个数组，最后一位成员下标为长度-1
