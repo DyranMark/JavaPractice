@@ -36,9 +36,9 @@ public class Staff {
 	public void test(People p){
 		p.clothing();
 	}
-	public People test2(){
-		return new Student();
-	}
+//	public People test2(){
+//		return new Student();
+//	}
 	
 	
 	public String getName() {

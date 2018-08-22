@@ -1,6 +1,6 @@
 package bk1;
 
-public class Student extends People {
+public class Student implements Comparable<Student> {
 
 	/*
 	 * 事物： 属性 事物的信息描述 行为 事物的功能
@@ -23,15 +23,9 @@ public class Student extends People {
 	 */
 	private String address;
 	int age = 20;
-	public final void setAge(int age) {
-		this.age = age;
-	}
+	String name ;
 
-	public int getAge() {
-		return age;
-	}
-
-	final String name = "Henry";
+	//final String name = "Henry";
 
 	/*
 	 * 构造方法： 给对象的数据进行初始化
@@ -40,11 +34,14 @@ public class Student extends People {
 	 */
 	// 构造方法，名字和类名一致，没有返回值类型，没有具体返回值
 	 Student() {
-		System.out.println("Student,construction method");
+		//System.out.println("Student,construction method");
+		 super();
 	}
 	
-	 Student(int age,String sex,String name){
-		super(age,sex,name);
+	 Student(String name,int age){
+		 super();
+		 this.name = name;
+		 this.age = age;
 	}
 
 	public void Study() {
@@ -53,12 +50,15 @@ public class Student extends People {
 
 	// 代码块概述和讲解
 	static {
-		System.out.println("Student,static code");
+		//System.out.println("Student,static code");
 	}
 
 	{
-		System.out.println("Student,construction code");
+		//System.out.println("Student,construction code");
 	}
+	
+	
+	
 	
 	public void clothing(){
 		System.out.println("校服");
@@ -99,9 +99,17 @@ public class Student extends People {
 	public void showmessage(){
 		System.out.println(age);
 		System.out.println(this.age);
-		System.out.println(super.age);
+		//System.out.println(super.age);
 	}
 	
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public String getAddress() {
 		return address;
@@ -111,4 +119,20 @@ public class Student extends People {
 		this.address = address;
 	}
 
+	public final void setAge(int age) {
+		this.age = age;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	@Override
+	public int compareTo(Student o) {
+		// TODO Auto-generated method stub
+		int num  = this.name.length() - o.name.length();
+		int num2 = num==0?this.name.compareTo(o.name):num;
+		int num3 = num2==0?this.age-o.age:num2;
+		return num3;
+	}
 }

@@ -5,10 +5,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeSet;
 
 
 public class Class_1 {
@@ -1707,23 +1711,147 @@ public class Class_1 {
 		
 		//泛型的类型参数只能是类类型（包括自定义类），不能是简单类型
 		//传入的实参类型需与泛型的类型参数类型相同，即为Integer.
-		Generic<Integer> Gi = new Generic<Integer>(23);
-		Generic<String> Gs = new Generic<String>("What's the matter?");
+//		Generic<Integer> Gi = new Generic<Integer>(23);
+//		Generic<String> Gs = new Generic<String>("What's the matter?");
+//		
+//		System.out.println(Gi.getKey());
+//		System.out.println(Gs.getKey());
+//		//在泛型类中使用泛型的方法或成员变量定义的类型可以为任何的类型。
+//		Generic g1 = new Generic(12345);
+//		Generic g2 = new Generic(0.21);
+//		Generic g3 = new Generic(false);
+//		Generic g4 = new Generic("再回首");
+//		
+//		System.out.println(g1.getKey());
+//		System.out.println(g2.getKey());
+//		System.out.println(g3.getKey());
+//		System.out.println(g4.getKey());
 		
-		System.out.println(Gi.getKey());
-		System.out.println(Gs.getKey());
-		//在泛型类中使用泛型的方法或成员变量定义的类型可以为任何的类型。
-		Generic g1 = new Generic(12345);
-		Generic g2 = new Generic(0.21);
-		Generic g3 = new Generic(false);
-		Generic g4 = new Generic("再回首");
+		//增强for  代替迭代器
+//		ArrayList<String> arr = new ArrayList<String>();
+//		arr.add("a");
+//		arr.add("a");
+//		arr.add("a");
+//		arr.add("a");
+//		arr.add("a");
+//		//FOR
+//		for(String s : arr){
+//			System.out.println(s);
+//		}
 		
-		System.out.println(g1.getKey());
-		System.out.println(g2.getKey());
-		System.out.println(g3.getKey());
-		System.out.println(g4.getKey());
+		/*
+		 * HashCode
+		 * 
+		 * */
+//		HashSet<String> hs = new HashSet<String>();
+//		hs.add("Hello");
+//		hs.add("world");
+//		hs.add("Java");
+//		hs.add("Hello");
+//		
+//		
+//		for(String s : hs){
+//			System.out.println(s);
+//		}
 		
-
+		
+		/*
+		 * TreeSet 
+		 * */
+		
+//		TreeSet<Integer> ts = new TreeSet<Integer>();
+//		ts.add(1);
+//		ts.add(15);
+//		ts.add(17);
+//		ts.add(12);
+//		ts.add(190);
+//		ts.add(156);
+//		ts.add(156);
+//		ts.add(144);
+//		ts.add(11);
+//		
+//		for(Integer i : ts){
+//			System.out.println(i);
+//		}
+		
+		
+		
+		/*	Collection 子类， List,Set,这一章学习 Set
+		 * 从Student 类中，实现 Comparable<Student> 接口，才能进行排序
+		 * 
+		 * */
+		//Set
+//		Set<String> st = new HashSet<String>();
+//		st.add("一");
+//		st.add("二");
+//		st.add("三");
+//		st.add("四");
+//		st.add("五");
+//		for(String s : st){
+//			System.out.print(" "+s);
+//		}
+		
+//		//HASHSET
+//		HashSet<String> hs = new HashSet<String>();
+//		hs.add("一");
+//		hs.add("二十二");
+//		hs.add("三");
+//		hs.add("一");
+//		for(String s : hs){
+//			System.out.print(s + " ");
+//		}
+//		
+//		//HasSet 自定义类
+//		HashSet<Person> hsp = new HashSet<Person>();
+//		//hsp.add("张三",20,'男');
+//		Person p1 = new Person("张三",20,'男');
+//		Person p2 = new Person("李三",20,'男');
+//		Person p3 = new Person("王五",20,'男');
+//		Person p4 = new Person("赵六",20,'男');
+//		Person p5 = new Person("张三",21,'男');
+//		
+//		hsp.add(p1);hsp.add(p2);hsp.add(p3);hsp.add(p4);hsp.add(p5);
+//		for(Person p :hsp){
+//			System.out.println(p.getName() + p.getAge() + p.getSex());
+//		}
+		
+//		//TreeSet
+//		TreeSet<Student> ts = new TreeSet<Student>();
+//
+//		// 创建元素
+//		Student s1 = new Student("linqingxia", 27);
+//		Student s2 = new Student("zhangguorong", 29);
+//		Student s3 = new Student("wanglihong", 23);
+//		Student s4 = new Student("linqingxia", 27);
+//		Student s5 = new Student("liushishi", 22);
+//		Student s6 = new Student("wuqilong", 40);
+//		Student s7 = new Student("fengqingy", 22);
+//
+//		// 添加元素
+//		ts.add(s1);
+//		ts.add(s2);
+//		ts.add(s3);
+//		ts.add(s4);
+//		ts.add(s5);
+//		ts.add(s6);
+//		ts.add(s7);
+//
+//		// 遍历
+//		for (Student s : ts) {
+//			System.out.println(s.getName() + "---" + s.getAge());
+//		}
+		
+		//LinkedHashSet
+		/*
+		 * LinkedHashSet:底层数据结构由哈希表和链表组成。
+		 * 哈希表保证元素的唯一性。
+		 * 链表保证元素有序。(存储和取出是一致)
+		 */
+		LinkedHashSet <String> lhs = new LinkedHashSet<>();
+		lhs.add("1");lhs.add("2");lhs.add("3");lhs.add("4");lhs.add("5");lhs.add("1");
+		for(String s:lhs){
+			System.out.print(s + " ");
+		}
 	}
 	
 
