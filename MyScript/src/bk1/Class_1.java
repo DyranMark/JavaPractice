@@ -6,11 +6,13 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
@@ -1911,50 +1913,88 @@ public class Class_1 {
 //		}
 		
 		
-		/*
-		 * 模拟斗地主发牌
-		 * */
-		//创建一个牌库
-		ArrayList<String> Poke = new ArrayList<String>();
-		// 定义一个花色数组
-		String[] colors = { "♠", "♥", "♣", "♦" };
-		// 定义一个点数数组
-		String[] numbers = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-				"J", "Q", "K" };
-		for(String color:colors){
-			for(String number:numbers){
-				Poke.add(color+number);
-			}
-		}
-		Poke.add("大王");
-		Poke.add("小王");
-		System.out.println(Poke);
-		//洗牌
-		Collections.shuffle(Poke);
-		System.out.println(Poke);
+//		/*
+//		 * 模拟斗地主发牌
+//		 * */
+//		//创建一个牌库
+//		ArrayList<String> Poke = new ArrayList<String>();
+//		// 定义一个花色数组
+//		String[] colors = { "♠", "♥", "♣", "♦" };
+//		// 定义一个点数数组
+//		String[] numbers = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+//				"J", "Q", "K" };
+//		for(String color:colors){
+//			for(String number:numbers){
+//				Poke.add(color+number);
+//			}
+//		}
+//		Poke.add("大王");
+//		Poke.add("小王");
+//		System.out.println(Poke);
+//		//洗牌
+//		Collections.shuffle(Poke);
+//		System.out.println(Poke);
+//		
+//		//发牌
+//		ArrayList<String> landlord = new ArrayList<String>();
+//		ArrayList<String> farmer1 = new ArrayList<String>();
+//		ArrayList<String> farmer2 = new ArrayList<String>();
+//		ArrayList<String> Cards = new ArrayList<String>();
+//		
+//		for(int i = 0;i<Poke.size();i++){
+//			if(i>=Poke.size()-3){
+//				Cards.add(Poke.get(i));
+//			}else if(i%3==0){
+//				landlord.add(Poke.get(i));
+//			}else if(i%3==1){
+//				farmer1.add(Poke.get(i));
+//			}else if(i%3==2){
+//				farmer2.add(Poke.get(i));
+//			}
+//		}
+//		//看牌
+//		System.out.println("地主牌"+landlord);
+//		System.out.println("农民甲"+farmer1);
+//		System.out.println("农民乙"+farmer2);
+//		System.out.println("底牌"+Cards);
 		
-		//发牌
-		ArrayList<String> landlord = new ArrayList<String>();
-		ArrayList<String> farmer1 = new ArrayList<String>();
-		ArrayList<String> farmer2 = new ArrayList<String>();
-		ArrayList<String> Cards = new ArrayList<String>();
-		
-		for(int i = 0;i<Poke.size();i++){
-			if(i>=Poke.size()-3){
-				Cards.add(Poke.get(i));
-			}else if(i%3==0){
-				landlord.add(Poke.get(i));
-			}else if(i%3==1){
-				farmer1.add(Poke.get(i));
-			}else if(i%3==2){
-				farmer2.add(Poke.get(i));
-			}
+//=====================================================		
+//		(1)HashMap集合的练习
+//		A:HashMap<String,String>
+//		B:HashMap<Integer,String>
+//		C:HashMap<String,Student>
+//		D:HashMap<Student,String>
+//	(2)TreeMap集合的练习		
+//		A:TreeMap<String,String>
+//		B:TreeMap<Student,String>
+//	(3)案例
+//		A:统计一个字符串中每个字符出现的次数
+//		B:集合的嵌套遍历
+//			a:HashMap嵌套HashMap
+//			b:HashMap嵌套ArrayList
+//			c:ArrayList嵌套HashMap
+//			d:多层嵌套	
+		Map<Integer,String> map = new HashMap<Integer, String>();
+		map.put(1,"壹");
+		map.put(2,"贰");
+		map.put(3,"叁");
+		//方式1，键找值
+		Set<Integer> set = map.keySet();//keyset()方法返回Map视图。返回的是Map集合中所有的键
+		for(Integer key:set){//将set集合遍历
+			String value = map.get(key);
+			System.out.println(key+"--"+value);//map中的每一个键，通过 get 方法取得键对应的值，赋给 value
 		}
-		//看牌
-		System.out.println("地主牌"+landlord);
-		System.out.println("农民甲"+farmer1);
-		System.out.println("农民乙"+farmer2);
-		System.out.println("底牌"+Cards);
+		//方式2，对象找键值
+		//返回的是 Map.Entry 对象，该对象包含 键和值
+		Set<Map.Entry<Integer, String>> en = map.entrySet();
+		for(Map.Entry<Integer, String> is:en){
+			Integer key = is.getKey();
+			String value = is.getValue();
+			System.out.println(key+"--"+value);
+		}
+		
+		HashMap<Student,String> m = new HashMap<Student, String>();
+		
 	}
 	
 	
