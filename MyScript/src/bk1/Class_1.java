@@ -1994,7 +1994,16 @@ public class Class_1 {
 		}
 		
 		HashMap<Student,String> m = new HashMap<Student, String>();
+		Student s1 = new Student("金正焕",20);
+		Student s2 = new Student("善宇",20);
+		m.put(s1,"男");
+		m.put(s2,"男");
 		
+		Set<Student> st = m.keySet();
+		for(Student s : st){
+			String value = m.get(s);
+			System.out.println(value + "----"+s);
+		}
 	}
 	
 	
